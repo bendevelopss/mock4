@@ -109,7 +109,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
               <!--   Kitchen Sink -->
 
                     <div class="panel-heading" align="center">
-                        <h4 class="page-head-line">Schedule</h4>
+                        <h4 class="page-head-line">Parts And Item to Be done</h4>
                     </div>
                     <div class="panel panel-default">
                     <div class="panel-body">
@@ -134,7 +134,9 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Percent%</th>
+                                        <th>Item%</th>
                                         <th>progress</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
