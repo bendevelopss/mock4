@@ -74,8 +74,6 @@
               </div><!--//first panel body-->
 
 
-<!--    <script src="../../../controller/steps.js" type="text/javascript"></script>-->
-<?php include("../../../view/master/design_end.html");//?>
-
+    <script src="../../../controller/steps-add.js" type="text/javascript"></script>
 </body>
 </html>
