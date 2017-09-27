@@ -74,7 +74,7 @@
 <br><br><br>
             <div class="col-md-4 "><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
 
-            <div class="col-md-6" >  <br><button id="btn_save" class="btn btn-block btn-success btn-lg" onclick="return saves();">Save & Project Information</button></div>
+            <div class="col-md-6" >  <br><button id="btn_save" class="btn btn-block btn-success btn-lg" onclick="return saves();">Save & Proceed</button></div>
               </div>
               </div>
               </div><!--//2nd panel body-->

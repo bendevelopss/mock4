@@ -117,7 +117,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                      <ul class="nav nav-pills">
                                 <li class="active"><a href="#cat-pills" data-toggle="tab">Part</a>
                                 </li>
-                                <li class=""><a href="#sub-pills" data-toggle="tab">Pay Item</a>
+                                <li class=""><a href="#sub-pills"  data-toggle="tab">Pay Item</a>
                                        </li>
                             </ul>
                             <!-- pill-->

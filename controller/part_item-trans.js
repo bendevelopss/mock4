@@ -55,7 +55,7 @@ if(table==1){
 			{
 					$.ajax ({
 			type: "POST",
-	  	url: "../../../model/pay_item/populate_table_main.php",
+	  		url: "../../../model/pay_item/populate_table_main.php",
 		//	url: "../../../model/part_item/populate_table_main.php",
 			data:"cont_id="+cont_id ,
 			dataType: 'json',
@@ -68,7 +68,7 @@ if(table==1){
 						{
 							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_subcategory.fnAddData
-							([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],
+							([s[i][0],s[i][1]+' '+s[i][2],s[i][3],s[i][4],s[i][5],s[i][6],
 
 
 				'<button data-toggle="tooltip" onclick="table_row_view(this.value,0)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
