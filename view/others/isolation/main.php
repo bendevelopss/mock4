@@ -121,7 +121,10 @@ if (option && typeof option === "object") {
                               <th>Activities</th>                         
                               <th>Item</th>                         
                               <th>Station</th>                         
-                              <th>Volume</th>                         
+                              <th>Volume</th> 
+                              <th>percentage base on item</th> 
+                              <th>percentage base on part</th> 
+
                             </thead>
                             
                             <tbody></tbody>            
