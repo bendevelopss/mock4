@@ -9,7 +9,7 @@
 
   foreach($browse as $fetch)
   {
-    $output[] = array ($fetch['description'], $fetch['station'],$fetch['qty']);
+    $output[] = array ($fetch['description'],$fetch['pay_item_id'], $fetch['station'],$fetch['qty']);
   }
 $conn = null;
 

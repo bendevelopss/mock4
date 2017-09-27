@@ -158,7 +158,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                                         <th>Name</th>
                                         <th>Percent%</th>
                                         <th>Qty</th>
-                                        <th>Progress</th>
+
                                         <th></th>
                                         <th></th>
 

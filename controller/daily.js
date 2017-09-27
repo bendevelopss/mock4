@@ -75,7 +75,7 @@ function populate_activity(){
 						{
 							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_Activity.fnAddData
-							([s[i][0],s[i][1],s[i][2],
+							([s[i][0],s[i][1],s[i][2],s[i][3],
 
 
 				
