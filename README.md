@@ -1,1 +1,1 @@
-"# capstone bernie was here" 
+"# capstone" 
