@@ -31,7 +31,7 @@ function populate_table_manpower(){
 
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/subcat/populate_cat.php",
+			url: "../../../model/isolate/populate_cat.php",
 			dataType: 'json',
 			cache: false,
 		success: function(s)
@@ -65,7 +65,7 @@ function populate_activity(){
 
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/daily/populate_table_act.php",
+			url: "../../../model/isolate/populate_table_act.php",
 			dataType: 'json',
 			cache: false,
 		success: function(s)
