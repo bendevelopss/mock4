@@ -125,6 +125,7 @@ if (option && typeof option === "object") {
                               <th>percentage base on item</th> 
                               <th>percentage base on part</th> 
                               <th>part progress add</th> 
+                              <th>part id</th> 
 
                             </thead>
                             
