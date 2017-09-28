@@ -124,7 +124,23 @@ if (option && typeof option === "object") {
                               <th>Volume</th> 
                               <th>percentage base on item</th> 
                               <th>percentage base on part</th> 
+                              <th>part id</th> 
 
+                            </thead>
+                            
+                            <tbody></tbody>            
+                          </table> 
+                  </div> <!-- /. col --> 
+                  </div>               
+                  <div class="row" style="margin-top:25px">
+                  <div class="col-sm-4 col-xs-12">
+                          <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
+                            <thead>
+                              <th>id</th>                         
+                              <th>part name</th>                         
+                              <th>percent</th>                         
+                              <th>progress</th> 
+                            
                             </thead>
                             
                             <tbody></tbody>            
@@ -139,7 +155,7 @@ if (option && typeof option === "object") {
 
 
        <?php include("../../../view/master/design_end.html");//?>
-    <script src="../../../controller/daily.js" type="text/javascript"></script>
+    <script src="../../../controller/isolate.js" type="text/javascript"></script>
 
 
 </body>
