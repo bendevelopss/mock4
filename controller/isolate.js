@@ -57,6 +57,7 @@ function populate_table_manpower(){
 
 			}
 
+//ano ba git bakit ka nag eeror
 
 
 function populate_activity(){
