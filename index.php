@@ -34,9 +34,27 @@ setTimeout('Redirect()', 0);
   echo'<input type="hidden" id="persan_user_type" value="'.$persan_user_type.'">';
   }
 ?>
-<body>
+   <style type="text/css">
+    no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(assets/img/2.gif) center no-repeat #fff;
+}
 
+</style>
+<body>
+<script src="assets/css/animate.css" type="text/javascript"></script>
+<!--pre-loader start-->
 <div class="se-pre-con"></div>
+<div class="notify"></div>
+<!--pre-loader end-->
+
     <div  style="background-image:url(assets/img/1.jpg); height:200px width: 100px;">
 
         <div class="container">
@@ -68,6 +86,7 @@ setTimeout('Redirect()', 0);
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a class="menu-top" href="index.php">Home</a></li>
 
+
                             <li class="dropdown"">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Maintenance <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
@@ -84,6 +103,7 @@ setTimeout('Redirect()', 0);
            <!--  <li><a href="view/maintenance/pay_item/main.php">Items</a></li>
  -->          </ul>
         </li>
+
 
 
                             <li class="dropdown"">
@@ -122,8 +142,10 @@ setTimeout('Redirect()', 0);
             </div>
         </div>
     </section>
+
                 </div>
         </div>
+
     <div class="content-wrapper">
         <div class="container">
             <div class="row">
@@ -132,6 +154,11 @@ setTimeout('Redirect()', 0);
 
                 </div>
             </div>
+                  <div class="container">
+  <div class="alert alert-danger">
+    <strong>Warning!</strong>
+  </div>
+</div>
              <div class="content-wrapper">
         <div class="container">
             <div class="row">
@@ -147,10 +174,12 @@ setTimeout('Redirect()', 0);
                             </div>
                             <div class="panel-body">
 
+<!---->     
 <!---->
-<!---->
+              
                             </div>
                         </div>
+
                     <br>
                     <br>
                     <br>
@@ -168,7 +197,7 @@ setTimeout('Redirect()', 0);
                     </div>
                 </div>
 
-
+                
             <!-- notification panel-->
                 <div class="col-md-4">
                     <div class="notice-board">
@@ -201,8 +230,24 @@ setTimeout('Redirect()', 0);
 
             <!--notification end-->
 
+
+
             </div>
+
 <?php include("view/master/design_end.html"); //footer?>  
+
 </body>
 </html>
  
+ <script type="text/javascript">
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");;
+
+    });
+</script>
+
+<script type="text/javascript">
+  
+$.notify("Hello World");
+</script>
