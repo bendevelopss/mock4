@@ -75,5 +75,6 @@
 
 
     <script src="../../../controller/steps-add.js" type="text/javascript"></script>
+    <?php include("../../../view/master/design_end.html");//?>
 </body>
 </html>
