@@ -103,7 +103,6 @@ function populate_table(){
 				{
 				//
 
-option = null;
 option = {
     title: {
         text: 'Project Progress',
