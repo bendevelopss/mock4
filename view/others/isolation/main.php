@@ -21,87 +21,15 @@
        <script type="text/javascript" src="echarts.js"></script>
        <script type="text/javascript">
 var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
+       
+        var myChart = echarts.init(dom);
 var app = {};
 option = null;
-option = {
-    title: {
-        text: 'Project Progress',
-        subtext:"Weekly updated"
-    },
-    tooltip : {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'cross',
-            label: {
-                backgroundColor: '#6a7985'
-            }
-        }
-    },
-    legend: {x:220,y:20,data:["Real-Time","Expectation","task left"]
-    },
-    //toolbox: {
-    //    feature: {
-     //       saveAsImage: {}
-     //   }
-    //},
-    toolbox:{show:!0,feature:{magicType:{show:!0,title:{line:"Line",bar:"Bar",stack:"Stack"},
-type:["line","bar","stack"]},restore:{show:!0,title:"Restore"},saveAsImage:{show:!0,title:"Save Image"}}},calculable:!0,
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis : [
-        {
-            type : 'category',
-            boundaryGap : false,
-            data : ['1','2','3','4','5','6','7',]//number of months populate months
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value'
-        }
-    ],
-    series : [
-       
-        {
-            name:'Expectation',
-            type:'line',
-            stack: 'Total amount',
-            smooth:!0,
-            label: {
-                normal: {
-                    show: true,
-                    position: 'top'
-                }
-            },
-            areaStyle: {normal: {}},
-            data:[0, 10, 30, 50, 70, 90, 100]
-        },
-        {
-            name:'Real-Time',
-            type:'line',
-            smooth:!0,
-            stack: 'accumulate amount',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'top'
-                }
-            },
-            areaStyle: {normal: {}},
-            data:[0, 14, 44]
-        },
-        
-    ]
-};
-;
+
 if (option && typeof option === "object") {
     myChart.setOption(option, true);
 }
+
        </script>
 
                  <div class="col-md-12">
