@@ -221,3 +221,4 @@ if (option && typeof option === "object") {
 // //ajax end
 
 // 			}
+//a no ba mag push ka hinayupak
