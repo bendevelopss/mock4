@@ -14,19 +14,22 @@
                     <h4 class="page-head-line">DAILY ACCOMPLISHMENT REPORT</h4>
                         <div class="panel-body">
                           <div class="row">
-                        <div class="col-sm-1 col-xs-2">                        
-                          <h4 class="box-title" style="margin-left:13px">
-                               <a href="#" onclick="return confirmCancel()" role="button" data-toggle='tooltip' title="Cancel" data-placement='bottom' class="btn text-red"
+
+
+                        <div class="col-sm-1 col-xs-2">
+                          <h4 class="box-title">
+                               <button 
+                              onclick="window.location.href='../../../view/transaction/PM/main.php'" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white"> <i class="ion-android-close"></i> </a>                               
-                          </h4>     
+                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-times" ></i> </button>                               
+                          </h4>                             
                         </div> 
 
                         <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
                                <button role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; " disabled > <i class="ion-android-done"></i> </button>                               
+                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-check" style="color:green"></i> </button>                               
                           </h4>                             
                         </div>      
                                            
@@ -130,6 +133,8 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             <h4 class="modal-title" id="myModalLabel">Used</h4>
                                         </div>
+
+
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
                                         </div>
@@ -148,7 +153,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Reciecve</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Receive</h4>
                                         </div>
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
@@ -186,25 +191,6 @@
                       </div>    
                     </div> <!-- /.col-->  
 
-                    <div class="col-md-3 col-xs-12" id="clerkDiv">
-                      <label id="clerkErr"  ><font color="darkred">*</font>Day :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <select>
-                        <option>Monday</option>
-                        <option>Yueday</option>
-                        <option>Wednesday</option>
-                        <option>Thursdaty</option>
-                        <option>Friday</option>
-                        <option>Saturday</option>
-                        <option>Sunday</option>
-                      </select>
-                      </div>    
-                      <input type='hidden' id="chkClerk" value='no-match'>
-                    </div> <!-- /.col-->  <!--Customer Field-->                 
-
-                    
-
                                    
                   </div><!--/.row-->
 
@@ -216,12 +202,15 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" data-toggle="modal" data-target="#myModal" onclick="reset();" 
+                               <button id="btn_save" data-target="#myModal" data-toggle='modal' title="Save Record" data-placement='bottom' class="btn text-green" onclick="reset();" 
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+                               text-align: center; font-size:25px; background-color:white; "  >+ </button>                               
                           </h4>                            
                         </div>    
                   </div><!--/.row-->
+
+
+
                   <label id="custnameErr" ><font color="darkred">*</font>Work Performed Today</label>
                   <div class="row" style="margin-top:25px">
                   <div class="col-sm-4 col-xs-12">
@@ -275,12 +264,13 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" data-toggle="modal" data-target="#myModal1" onclick="reset();" 
+                               <button id="btn_save"  class="btn text-green" data-toggle="modal" data-target="#myModal1" onclick="reset();" 
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+                               text-align: center; font-size:25px; background-color:white; "  >+</button>                            
                           </h4>                            
                         </div>    
                   </div><!--/.row-->
+
 
                   <div class="row" style="margin-top:25px">
                   <div class="col-sm-4 col-xs-12">
@@ -301,7 +291,7 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" data-toggle="modal" data-target="#myModal2" onclick="reset();" 
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();" 
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
                                text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
                           </h4>                            
@@ -331,8 +321,8 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" data-toggle="modal" data-target="#myModal3" onclick="reset();" 
-                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal3"  class="btn text-green" onclick="reset();" 
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none ;
                                text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
                           </h4>                            
                         </div>    

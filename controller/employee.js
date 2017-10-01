@@ -93,10 +93,10 @@ function validate_form(){
 		$('#f_email_div').removeClass('has-error');
 	if($('#f_add').val()==''){
 		err = true;
-		$('#f_add').addClass('has-error');
+		$('#f_add_div').addClass('has-error');
 	}
 	else
-		$('#f_add').removeClass('has-error');
+		$('#f_add_div').removeClass('has-error');
 
 
 	return err;
@@ -117,7 +117,7 @@ function reset(){
 	$('#f_name_div').removeClass('has-error');
 	$('#f_cont_div').removeClass('has-error');
 	$('#f_email_div').removeClass('has-error');
-	$('#f_add').removeClass('has-error');
+	$('#f_add_div').removeClass('has-error');
 
 
 

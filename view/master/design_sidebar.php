@@ -50,7 +50,7 @@ for page ../../../view/.../main.php
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Task <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
             <li><a href="../../../view/transaction/PM/main.php">Project Manager</a></li>
-           <li><a href="../../../view/transaction/safety/main.php">Safety Officer</a></li>
+           <!-- <li><a href="../../../view/transaction/safety/main.php">Safety Officer</a></li> -->
           <li><a href="../../../view/transaction/PI/main.php">Project Engineer</a></li>
           </ul>
         </li>
@@ -58,7 +58,7 @@ for page ../../../view/.../main.php
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Records <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
            <li><a href="../../../view/transaction/project/main.php">Projects</a></li>
-           <li><a href="../../../view/transaction/photo/main.php">Photo Gallery</a></li>
+           <!-- <li><a href="../../../view/transaction/photo/main.php">Photo Gallery</a></li> -->
            <li><a href="../../../view/transaction/progress/main.php">Reports</a></li>
           </ul>
         </li>

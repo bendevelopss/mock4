@@ -25,7 +25,13 @@ function populate_table_main(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_main.fnAddData
-	      (['<a href="../../../view/maintenance/materials/main.php'+s[i][1]+'">'+s[i][0]+'</a>','<a href="../../../view/maintenance/materials/main.php'+s[i][1]+'">'+s[i][1]+'</a>',s[i][1],s[i][1]],false);
+	      ([
+	      	s[i].contract_id,s[i].proj_name,
+
+	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>'+'   '+
+	      	'<a href="../../../view/transaction/Weekly/main.php?contract='+s[i].contract_id+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
+	      	'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>',
+	      ],false);
 	      table_main.fnDraw();
 
 	    }
@@ -33,6 +39,7 @@ function populate_table_main(){
 	});
 	//ajax end
 } //
+
 
 
 function table_row_view(id){
