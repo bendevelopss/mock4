@@ -133,7 +133,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
 
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Percent%</th>
+                                        <th>Percent (%)</th>
                                         <th>Item%</th>
                                         <th>progress</th>
                                         <th></th>
@@ -156,7 +156,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                                         <th>ID</th>
                                         <th>Part</th>
                                         <th>Name</th>
-                                        <th>Percent%</th>
+                                        <th>Percent (%)</th>
                                         <th>Qty</th>
 
                                         <th></th>
