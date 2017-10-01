@@ -67,53 +67,22 @@ $('#btn_reset').click(function(){ reset(); tae();})
 function validate_form(){
 err = false;
 
-if($('#f_name').val()=='none'){
+if($('#f_code').val()==''){
 	err = true;
-	$('#f_name_div').addClass('has-error');
+	$('#f_code_div').addClass('has-error');
 }
 else
-	$('#f_name_div').removeClass('has-error');
+	$('#f_code_div').removeClass('has-error');
 
 
-		if($('#f_amount').val()==''){
+		if($('#f_desc').val()==''){
 			err = true;
-			$('#f_amount_div').addClass('has-error');
+			$('#f_desc_div').addClass('has-error');
 		}
 		else
-			$('#f_amount_div').removeClass('has-error');
+			$('#f_desc_div').removeClass('has-error');
 
-			if($('#f_contact').val()=='none'){
-				err = true;
-				$('#f_contact_div').addClass('has-error');
-			}
-			else
-				$('#f_contact_div').removeClass('has-error');
-
-		if($('#f_scope').val()==''){
-			err = true;
-			$('#f_scope_div').addClass('has-error');
-			}
-		else
-			$('#f_scope_div').removeClass('has-error');
-		if($('#f_billing').val()==''){
-			err = true;
-			$('#f_billing_div').addClass('has-error');
-			}
-		else
-			$('#f_billing_div').removeClass('has-error');
-		if($('#f_duration').val()==''){
-			err = true;
-			$('#f_duration_div').addClass('has-error');
-			}
-		else
-			$('#f_duration_div').removeClass('has-error');
-		if($('#f_personnel').val()==''){
-			err = true;
-			$('#f_personel_div').addClass('has-error');
-			}
-		else
-			$('#f_personel_div').removeClass('has-error');
-
+			
 
 
 
