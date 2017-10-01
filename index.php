@@ -8,7 +8,7 @@ error_reporting(E_ALL & ~E_NOTICE);
   ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include("view/master/design.html");//header and design
+<?php include("view/master/design_index.html");//header and design
 if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   {?>
     <script type="text/javascript">
@@ -49,7 +49,7 @@ setTimeout('Redirect()', 0);
 
 </style>
 <body>
-<script src="assets/css/animate.css" type="text/javascript"></script>
+
 <!--pre-loader start-->
 <div class="se-pre-con"></div>
 <div class="notify"></div>
@@ -234,7 +234,7 @@ setTimeout('Redirect()', 0);
 
             </div>
 
-<?php include("view/master/design_end.html"); //footer?>  
+<?php include("view/master/design_end_index.html"); //footer?>  
 
 </body>
 </html>
