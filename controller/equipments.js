@@ -301,7 +301,10 @@ else{
 			data: dataString,
 			dataType: 'json',
 			cache: false,
-			success: function(s){	}
+			success: function(s){	
+				populate_table_main();
+
+			}
 		});
 		//ajax end
 		swal({

@@ -168,12 +168,13 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+	populate_table_main();
+
+		}
 	});
 	//ajax end
-		reset();
-		populate_table_main();
-
+		
   } else {
     swal("Cancelled", "User Cancelled", "error");
   }
@@ -215,11 +216,12 @@ $('#btn_save').click(function(){
 			  data: dataString,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){	}
+			  success: function(s){
+	populate_table_main();
+			  	}
 			});
 			//ajax end
-		  	//alert('Saved');
-
+		  	
 swal({
 
 title: "Saved",
@@ -230,9 +232,8 @@ title: "Saved",
 
 
 });
-		  	reset();
-				$("#myModal").modal("hide");
-		  	populate_table_main();
+		  		$("#myModal").modal("hide");
+		  	
 		}
 		else{ //UPDATE MODE
 			var id = this.value;
@@ -243,7 +244,10 @@ title: "Saved",
 			  data: dataString+'&id='+id,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){}
+			  success: function(s){
+	populate_table_main();
+			  	
+			  }
 			});
 			//ajax end
 		  	swal({

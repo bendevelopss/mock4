@@ -183,7 +183,10 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+	populate_table_main();
+
+		}
 	});
 	//ajax end
 		reset();
@@ -230,7 +233,9 @@ $('#btn_save').click(function(){
 			  data: dataString,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){	}
+			  success: function(s){
+	populate_table_main();
+			  	}
 			});
 			//ajax end
 		  	//alert('Saved');
@@ -245,8 +250,7 @@ title: "Saved",
 
 
 });
-		  	reset();
-		  	populate_table_main();
+		  	
 		  	$("#myModal").modal("hide");
 		}
 		else{ //UPDATE MODE
@@ -258,7 +262,10 @@ title: "Saved",
 			  data: dataString+'&id='+id,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){}
+			  success: function(s){
+	populate_table_main();
+
+			  }
 			});
 			//ajax end
 		  	swal({
@@ -271,9 +278,7 @@ title: "Updated",
 
 
 });
-		  	reset();
-		  	populate_table_main();
-			$("#myModal").modal("hide");
+		  	$("#myModal").modal("hide");
 
 		}
 	}
