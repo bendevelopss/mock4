@@ -16,11 +16,11 @@
         <div class="row">
 
 
-          
-         
+
+
           <div class="col-xs-6"></div> <!--empty space-->
 
-          
+
 
         </div>
 
@@ -29,7 +29,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <div class="wrapper">
-                  
+
                   <!-- Right side column. Contains the navbar and content of the page -->
                   <div class="content-wrapper">
                     <!-- Content Header (Page header) -->
@@ -42,7 +42,7 @@
                    </section>
 
                    <!---------------------------modal start------------------------------------------>
-                   
+
                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -51,7 +51,7 @@
                           <h4 class="modal-title" id="myModalLabel">Activity </h4>
                         </div>
                         <div class="modal-body">
-                          
+
                           <div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
 
 
@@ -80,7 +80,7 @@
 
 
                         </div> <!-- /.row -->
-                        
+
                       </div>
 
                       <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
@@ -159,8 +159,8 @@
            <!--------------------------modal end------------------------------------------>
            <!-- Main content -->
            <section class="content">
-            
-             
+
+
 
             <div class="row" >              
               <div class="col-lg-12 col-sm-12 col-xs-12">
@@ -168,7 +168,7 @@
                   <div class="box-header">     
                     <div class="row" style="margin-top:25px">
 
-                      
+
                       <div class="col-md-3 col-xs-12" >
                         <label id="transdateErr" ><font color="darkred">*</font>Order Date :</label>    
                         <div class="input-group" style="margin-top:3px">
@@ -177,165 +177,199 @@
                        </div>    
                      </div> <!-- /.col-->  
 
-                     
-                   </div><!--/.row-->
+                     <div class="col-md-3 col-xs-12" >
+                      <label id="transdateErr" ><font color="darkred">*</font>Order Day :</label>    
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                       <input id="transdate" value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
+                     </div>    
+                   </div> <!-- /.col-->  
 
 
-                   <hr style="border: 0.5px solid #f00">  
-                   <div class="row" style="margin-top:25px">
-
-                    
-
-                    <div class="col-sm-1 col-xs-2">
-                      <h4 class="box-title">
-                       <button id="btn_save" data-target="#myModal" data-toggle='modal' title="Save Record" data-placement='bottom' class="btn text-green" onclick="reset();" 
-                       style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                       text-align: center; font-size:25px; background-color:white; "  >+ </button>                               
-                     </h4>                            
-                   </div>    
                  </div><!--/.row-->
 
 
+                 <hr style="border: 0.5px solid #f00">  
+                 <div class="row" style="margin-top:25px">
 
-                 <h1>
-                   
-                  <small>Work Performed Today</small>
-                </h1>   
-                
-                <div class="row" style="margin-top:25px">
-                  <div class="col-sm-6 col-xs-12">
-                    <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
-                      <thead>
-                        <th>Activities</th>                         
-                        <th>Station</th>                         
-                        <th>Volume</th>                         
-                      </thead>
-                      
-                      <tbody></tbody>            
-                    </table> 
-                  </div> <!-- /. col --> 
-                </div>
-                <hr style="border: 0.5px solid #f00">  
-                <div class="row" style="margin-top:25px">
 
-                  <div class="col-md-3 col-xs-12">
-                    <label id="custnameErr" ><font color="darkred">*</font>Weather :</label>
-                    <div class="input-group" style="margin-top:3px">
-                     <span class="input-group-addon">AM</i></span>
-                     <input type="text" >
-                   </div>    
-                   
-                   <div class="input-group" style="margin-top:3px">
-                     <span class="input-group-addon">PM</i></span>
-                     <input type="text" >
-                   </div>  
-                 </div> <!-- /.col-->  <!--Customer Field-->
 
-                 <div class="col-md-3 col-xs-12" >
-                  <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>    
-                  <div class="input-group" style="margin-top:3px">
-                   
-                    <input type="radio"> Yes
-                    <br>
-                    <input type="radio"> No
-                  </div>    
-                </div> <!-- /.col-->  
+                  <div class="col-sm-1 col-xs-2">
+                    <h4 class="box-title">
+                     <button id="btn_save" data-target="#myModal" data-toggle='modal' title="Save Record" data-placement='bottom' class="btn text-green" onclick="reset();" 
+                     style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                     text-align: center; font-size:25px; background-color:white; "  >+ </button>                               
+                   </h4>                            
+                 </div>    
+               </div><!--/.row-->
 
-                
 
-                
 
-                
-              </div><!--/.row-->
+               <h1>
+
+                <small>Work Performed Today</small>
+              </h1>   
+
+              <div class="row" style="margin-top:25px">
+                <div class="col-sm-6 col-xs-12">
+                  <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
+                    <thead>
+                      <th>Activities</th>                         
+                      <th>Station</th>                         
+                      <th>Volume</th>                         
+                    </thead>
+
+                    <tbody></tbody>            
+                  </table> 
+                </div> <!-- /. col --> 
+              </div>
               <hr style="border: 0.5px solid #f00">  
               <div class="row" style="margin-top:25px">
 
-                
+                <div class="col-md-3 col-xs-12">
+                  <label id="custnameErr" ><font color="darkred">*</font>Weather :</label>
+                  <div class="input-group" style="margin-top:3px">
+                   <span class="input-group-addon">AM</i></span>
+                   <input type="text" >
+                 </div>    
 
-                <div class="col-sm-1 col-xs-2">
-                  <h4 class="box-title">
-                   <button id="btn_save"  class="btn text-green" data-toggle="modal" data-target="#myModal1" onclick="reset();" 
-                   style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                   text-align: center; font-size:25px; background-color:white; "  >+</button>                            
-                 </h4>                            
-               </div>    
-             </div><!--/.row-->
+                 <div class="input-group" style="margin-top:3px">
+                   <span class="input-group-addon">PM</i></span>
+                   <input type="text" >
+                 </div>  
+               </div> <!-- /.col-->  <!--Customer Field-->
+
+               <div class="col-md-3 col-xs-12" >
+                <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>    
+                <div class="input-group" style="margin-top:3px">
+
+                  <input type="radio"> Yes
+                  <br>
+                  <input type="radio"> No
+                </div>    
+              </div> <!-- /.col-->  
 
 
-             <div class="row" style="margin-top:25px">
-              <div class="col-sm-4 col-xs-12">
-                <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
-                  <thead>
-                    <th style="width:180px">Manpower</th>
-                    <th></th>                         
-                  </thead>                            
-                  <tbody>
-                  </tbody>            
-                </table> 
-              </div> <!-- /. col --> 
-            </div>
 
+
+
+
+            </div><!--/.row-->
+            <hr style="border: 0.5px solid #f00">  
             <div class="row" style="margin-top:25px">
 
-             <hr style="border: 0.5px solid #f00">  
 
-             <div class="col-sm-1 col-xs-2">
-              <h4 class="box-title">
-               <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();" 
-               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-               text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
-             </h4>                            
-           </div>    
-         </div><!--/.row-->
-         <div class="row" style="margin-top:25px">
-          <div class="col-lg-10 col-xs-12">
-            <table id="useTable" class="table table-condensed table-bordered table-hover table-striped" >
-              <thead>
-                <th  style="width:550px">Materials/Lubricants/Fuel Used</th>
-                <th  style="width:180px">Quantity</th>    
-                <th  style="width:180px">Equipment Used</th> 
-                <th  style="width:180px">Utilization</th>                      
-              </thead>
 
+              <div class="col-sm-1 col-xs-2">
+                <h4 class="box-title">
+                 <button id="btn_save"  class="btn text-green" data-toggle="modal" data-target="#myModal1" onclick="reset();" 
+                 style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                 text-align: center; font-size:25px; background-color:white; "  >+</button>                            
+               </h4>                            
+             </div>    
+           </div><!--/.row-->
+
+
+           <div class="row" style="margin-top:25px">
+            <div class="col-sm-4 col-xs-12">
+              <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
+                <thead>
+                  <th style="width:180px">Manpower</th>
+                  <th></th>                         
+                </thead>                            
+                <tbody>
+                </tbody>            
+              </table> 
+            </div> <!-- /. col --> 
+          </div>
+
+          <div class="row" style="margin-top:25px">
+
+           <hr style="border: 0.5px solid #f00">  
+
+           <div class="col-sm-1 col-xs-2">
+            <h4 class="box-title">
+             <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();" 
+             style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+             text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+           </h4>                            
+         </div>    
+       </div><!--/.row-->
+       <div class="row" style="margin-top:25px">
+        <div class="col-lg-6 col-xs-12">
+          <table id="useTable" class="table table-condensed table-bordered table-hover table-striped" >
+            <thead>
+              <th  style="width:550px">Materials/Lubricants/Fuel Used</th>
+              <th  style="width:180px">Quantity</th>    
               
-              <tbody></tbody>            
-            </table> 
-          </div> <!-- /. col --> 
-        </div>
-        
-      </div> <!-- /.col-->  <!--Customer Field-->           
-      <hr style="border: 0.5px solid #f00">  
+            </thead>
+
+
+            <tbody></tbody>            
+          </table> 
+        </div> <!-- /. col --> 
+      </div>
+
       <div class="row" style="margin-top:25px">
 
-        
+       <hr style="border: 0.5px solid #f00">  
 
-        <div class="col-sm-1 col-xs-2">
-          <h4 class="box-title">
-           <button id="btn_save" data-toggle="modal" data-target="#myModal3"  class="btn text-green" onclick="reset();" 
-           style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none ;
-           text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
-         </h4>                            
-       </div>    
-     </div><!--/.row-->
-     <div class="row" style="margin-top:25px">
-      <div class="col-lg-10 col-xs-12">
-        <table id="recTable" class="table table-condensed table-bordered table-hover table-striped" >
-          <thead>
-            <th  style="width:550px">Materials/Equipment/Documents Received</th>
-            <th  style="width:180px">Quantity</th>    
-            
-          </thead>
+       <div class="col-sm-1 col-xs-2">
+        <h4 class="box-title">
+         <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();" 
+         style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+         text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+       </h4>                            
+     </div>    
+   </div><!--/.row-->
+   <div class="row" style="margin-top:25px">
+    <div class="col-lg-5 col-xs-12">
+      <table id="useTable" class="table table-condensed table-bordered table-hover table-striped" >
+        <thead>
           
-          <tbody></tbody>            
-        </table> 
-      </div> <!-- /. col --> 
-    </div>
-  </div> <!-- /.col-->  <!--Customer Field-->           
+          <th  style="width:180px">Equipment Used</th> 
+          <th  style="width:180px">Utilization</th>                      
+        </thead>
+
+
+        <tbody></tbody>            
+      </table> 
+    </div> <!-- /. col --> 
+  </div>
+
+</div> <!-- /.col-->  <!--Customer Field-->           
+<hr style="border: 0.5px solid #f00">  
+<div class="row" style="margin-top:25px">
+
+
+
+  <div class="col-sm-1 col-xs-2">
+    <h4 class="box-title">
+     <button id="btn_save" data-toggle="modal" data-target="#myModal3"  class="btn text-green" onclick="reset();" 
+     style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none ;
+     text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+   </h4>                            
+ </div>    
+</div><!--/.row-->
+<div class="row" style="margin-top:25px">
+  <div class="col-lg-6 col-xs-12">
+    <table id="recTable" class="table table-condensed table-bordered table-hover table-striped" >
+      <thead>
+        <th  style="width:550px">Materials/Equipment/Documents Received</th>
+        <th  style="width:180px">Quantity</th>    
+
+      </thead>
+
+      <tbody></tbody>            
+    </table> 
+  </div> <!-- /. col --> 
+</div>
+</div> <!-- /.col-->  <!--Customer Field-->           
 </div>
 <hr style="border: 0.5px solid #f00">  
 
 <div class="col-sm-1 col-xs-2">
-  
+
 </div>    
 </div><!--/.row-->
 
@@ -345,14 +379,14 @@
     <label id="pickupErr" ><font color="darkred">*</font>Problems Encountered :</label>     
     <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
   </div> <!--/. col -->
-  
+
 
   <div class="col-md-3 col-xs-12" id="deliveryDiv">
     <label id="deliveryErr" ><font color="darkred">*</font>Visitors :</label>     
     <textarea id="delivery" rows="2" class="form-control" style="resize:none"></textarea>
   </div> <!--/. -->
 
-  
+
 </div> <!-- /. row -->
 
 <div class="row"  style="margin-top:25px" id="pickupDiv">
@@ -363,8 +397,8 @@
      <input type="text"> 
    </div>   
    <div class="input-group" style="margin-top:3px">
-     
-     
+
+
    </div>    
 
    <input type='hidden' id="chkCust" value="no-match">
@@ -377,8 +411,8 @@
     <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false">
   </div>   
   <div class="input-group" style="margin-top:3px">
-   
-   
+
+
   </div>    
 
   <input type='hidden' id="chkCust" value="no-match">
