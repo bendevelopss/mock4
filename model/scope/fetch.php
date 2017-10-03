@@ -9,7 +9,9 @@
   $browse = $q -> fetchAll();
   foreach($browse as $fetch)
   {
-    $output[] = array ($fetch['scope_name']);
+   $output[] = array(
+      'scope_name'=> $fetch['scope_name']
+  );
   }
 $conn = null;
 
