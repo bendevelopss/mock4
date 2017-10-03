@@ -54,11 +54,12 @@ $.ajax ({
 	success: function(s){
 		$('#btn_save').val(id);
 		$('#f_name').val(s[0][1]);
-		$('#f_contact').val(s[0][4]);
-		$('#f_scope').val(s[0][5]);
 		$('#f_personnel').val(s[0][2]);
 		$('#f_personnelno').val(s[0][3]);
-
+		$('#f_contact').val(s[0][4]);
+		$('#f_scope').val(s[0][5]);
+		
+		
 
 	}
 });
