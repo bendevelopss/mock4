@@ -28,15 +28,21 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                                         </div>
                                         <div class="modal-body">
 
-                                             <div class="col-sm-5 col-xs-10" id="f_type_cat_div" class='form-group'>
-                                                <label><font color="darkred">*</font>Part</label> <!-- MODEL -->     <select class="form-control input-lg" id="modal_equip_type" required><option selected="selected" value="none">-Category First-</option>
+                                             <div class="col-sm-5 col-xs-10" id="modal_equip_type_div" class='form-group'>
+                                                <label><font color="darkred">*</font>Part</label> <!-- MODEL -->     
+                                                <select class="form-control input-lg" id="modal_equip_type" required>
+                                                    
+                                                    <option value="none">-PART-</option>
                                                 </select>
 
                                             </div>
                                             <div class="col-sm-5 col-xs-10" id="f_type_percent_div" class='form-group'>
                                                 <label><font color="darkred">*</font>Percent</label> <!-- MODEL -->
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">%</span>
                                                 <input type="text" class="form-control input-lg" id="f_type_percent" required>
-
+                                                </div>                                 
+                       
                                             </div>
                                         </div>
 
@@ -61,7 +67,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
 
 
                                         <div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
-                                        <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
+                                        <div class="col-sm-4 col-xs-12" id="f_code_div" class='form-group'>
                                         <label><font color="darkred">*</font>Code</label> <!-- Category -->
                                         <input type="text" class="form-control input-lg" id="f_code" required>
                                           </div>
@@ -91,9 +97,9 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
 
                                         </div>
                                         <div class="modal-footer">
-                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset1" class="btn btn-block btn-lg">Reset</button></div>
-
-                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save1" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         
+                                         <div class="col-md-4 col-xs-12"><br><button id="btn_reset1" class="btn btn-block btn-lg">Reset</button></div>
+                                         <div class="col-md-4 col-xs-12"><br><button id="btn_save1" class="btn btn-block btn-success btn-lg">Save</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +139,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
 
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Percent (%)</th>
+                                        <th>Percent%</th>
                                         <th>Item%</th>
                                         <th>progress</th>
                                         <th></th>
@@ -156,7 +162,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                                         <th>ID</th>
                                         <th>Part</th>
                                         <th>Name</th>
-                                        <th>Percent (%)</th>
+                                        <th>Percent%</th>
                                         <th>Qty</th>
 
                                         <th></th>
