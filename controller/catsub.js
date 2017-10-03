@@ -91,36 +91,6 @@ if(table==1){
 
 
 			}
-			else if(table==2)
-			{
-						$.ajax ({
-			type: "POST",
-			url: "../../../model/subcat/populate_table_category.php",
-			data:"types="+test ,
-			dataType: 'json',
-			cache: false,
-		success: function(s)
-				{
-
-					table_category.fnClearTable();
-					for(var i = 0; i < s.length; i++)
-						{
-							//if(s[i][2]=='inactive'){enability='disabled'}
-							table_category.fnAddData
-							([s[i][0],s[i][1],
-
-
-				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs disabled title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
-				'<button data-toggle="tooltip" onclick="table_row_del(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  disabled btn-danger" title="Delete" id="del"> <i class="fa fa-trash"></i>Delete </button>',
-					],false);
-					table_category.fnDraw();
-
-						}
-				}
-				});
-//ajax end
-
-			}
 			else
 			{
 				alert("error table"+table );
@@ -296,11 +266,12 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+		populate_table_main(1);	
+		}
 	});
 	//ajax end
-		reset();
-		populate_table_main(1);
+		
 
   } else {
 		reset();
@@ -455,7 +426,9 @@ else{
 			data: dataString,
 			dataType: 'json',
 			cache: false,
-			success: function(s){	}
+			success: function(s){	
+		populate_table_main(0);
+			}
 		});
 		//ajax end
 			//alert('Saved');
@@ -482,7 +455,10 @@ title: "Saved",
 			data: dataString+'&id='+id,
 			dataType: 'json',
 			cache: false,
-			success: function(s){}
+			success: function(s){
+		populate_table_main(1);
+
+			}
 		});
 	//ajax end
 			swal({

@@ -74,7 +74,7 @@ $.ajax ({
 //ajax end
 }
 
-$('#btn_reset').click(function(){ reset(); tae(); })
+$('#btn_reset').click(function(){ reset(); tae(); populate_table_main();})
 
 function validate_form(){
 err = false;
@@ -252,7 +252,9 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+			populate_table_main();
+		}
 	});
 	//ajax end
 		reset();
@@ -266,23 +268,6 @@ function(isConfirm){
 
 //sweet end
 
-//var choice = confirm("Are you sure you want to Delete?");
-/*if(choice==true){
-	//ajax now
-	$.ajax ({
-		type: "POST",
-		url: "../../../model/equipment/delete.php",
-		data: 'id='+id,
-		dataType: 'json',
-		cache: false,
-		success: function(s){}
-	});
-	//ajax end
-	console.log(id);
-		alert('Success: Deleted ');
-		reset();
-		populate_table_main();
-}*/
 }
 
 
@@ -343,7 +328,9 @@ title: "Saved",
 			data: dataString+'&id='+id,
 			dataType: 'json',
 			cache: false,
-			success: function(s){}
+			success: function(s){
+				populate_table_main();
+			}
 		});
 		//ajax end
 			swal({
