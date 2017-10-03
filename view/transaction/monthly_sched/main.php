@@ -278,7 +278,10 @@
                   <h1 style="font-size: 19pt">
            Manpower Requirements
           </h1>   
+<<<<<<< HEAD
                   <hr style="border: 0.5px solid #f00">  
+=======
+>>>>>>> bernie
                     <div class="row" style="margin-right:25px">
 
                     <div class="col-md-3 col-xs-12">

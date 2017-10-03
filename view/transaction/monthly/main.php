@@ -208,7 +208,11 @@
             <small>Project Duration</small>
           </h1>   
           <hr style="border: 0.5px solid #f00">  
+<<<<<<< HEAD
                     <div class="row">
+=======
+                    <div class="row" style="margin-top:25px">
+>>>>>>> bernie
 
                     <div class="col-md-3 col-xs-12">
                       <label><font color="darkred">*</font>Contract :</label>
