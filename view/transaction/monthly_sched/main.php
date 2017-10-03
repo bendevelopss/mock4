@@ -66,12 +66,12 @@
         <section class="content">
 
          
-
+          
           <div class="row" >              
           <div class="col-lg-12 col-sm-12 col-xs-12">
               <div class="box box-solid">
                 <div class="box-header">     
-                  
+                   
                   
                     <div class="row" style="margin-top:25px">
 
@@ -288,7 +288,7 @@
                   <h1 style="font-size: 19pt">
            Manpower Requirements
           </h1>   
-                    <div class="row" style="margin-top:25px">
+                    <div class="row" style="margin-right:25px">
 
                     <div class="col-md-3 col-xs-12">
                       <label id="custnameErr" ><font color="darkred">*</font>Week 1 :</label>
