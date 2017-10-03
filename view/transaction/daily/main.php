@@ -16,22 +16,7 @@
                           <div class="row">
 
 
-                        <div class="col-sm-1 col-xs-2">
-                          <h4 class="box-title">
-                               <button 
-                              onclick="window.location.href='../../../view/transaction/PM/main.php'" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
-                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-times" ></i> </button>                               
-                          </h4>                             
-                        </div> 
-
-                        <div class="col-sm-1 col-xs-2">
-                          <h4 class="box-title">
-                               <button role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
-                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-check" style="color:green"></i> </button>                               
-                          </h4>                             
-                        </div>      
+                        
                                            
                         <div class="col-xs-6"></div> <!--empty space-->
 
@@ -52,7 +37,8 @@
           <h1>
            Report
             <small>DAILY ACCOMPLISHMENT REPORT</small>
-          </h1>                              
+          </h1>   
+          <hr style="border: 0.5px solid #f00">                             
         </section>
 
 <!---------------------------modal start------------------------------------------>
@@ -195,7 +181,7 @@
                   </div><!--/.row-->
 
 
-
+                   <hr style="border: 0.5px solid #f00">  
                   <div class="row" style="margin-top:25px">
 
                   
@@ -211,9 +197,13 @@
 
 
 
-                  <label id="custnameErr" ><font color="darkred">*</font>Work Performed Today</label>
+                   <h1>
+           
+            <small>Work Performed Today</small>
+          </h1>   
+                  
                   <div class="row" style="margin-top:25px">
-                  <div class="col-sm-4 col-xs-12">
+                  <div class="col-sm-6 col-xs-12">
                           <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
                             <thead>
                               <th>Activities</th>                         
@@ -225,19 +215,19 @@
                           </table> 
                   </div> <!-- /. col --> 
                   </div>
-
+                   <hr style="border: 0.5px solid #f00">  
                   <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12">
                       <label id="custnameErr" ><font color="darkred">*</font>Weather :</label>
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon">AM</i></span>
-                       <input type="text" placeholder=" Search Name ">
+                       <input type="text" >
                       </div>    
                      
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon">PM</i></span>
-                       <input type="text" placeholder=" Search Name ">
+                       <input type="text" >
                       </div>  
                     </div> <!-- /.col-->  <!--Customer Field-->
 
@@ -257,7 +247,7 @@
 
                                    
                   </div><!--/.row-->
-
+                   <hr style="border: 0.5px solid #f00">  
                   <div class="row" style="margin-top:25px">
 
                     
@@ -287,7 +277,7 @@
 
                   <div class="row" style="margin-top:25px">
 
-                  
+                   <hr style="border: 0.5px solid #f00">  
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
@@ -314,7 +304,7 @@
                   </div>
                      
                     </div> <!-- /.col-->  <!--Customer Field-->           
-
+                     <hr style="border: 0.5px solid #f00">  
                    <div class="row" style="margin-top:25px">
 
                   
@@ -342,8 +332,7 @@
                   </div>
                     </div> <!-- /.col-->  <!--Customer Field-->           
 </div>
-</div>
-</div>
+                 <hr style="border: 0.5px solid #f00">  
 
                   <div class="col-sm-1 col-xs-2">
                                           
@@ -371,7 +360,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Prepared by :</label>
                      <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input type="text" placeholder=" Search Name " disabled=""> 
+                       <input type="text"> 
                       </div>   
                       <div class="input-group" style="margin-top:3px">
                      
@@ -384,8 +373,8 @@
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Approved by :</label>
                       <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false">
                       </div>   
                       <div class="input-group" style="margin-top:3px">
                      
@@ -407,22 +396,25 @@
                 <!--TABLES -->
 
    
-                        </div>
-                        <div class="panel-body">
+                       
 
               </div>
-              </div>
-              </div><!--//
+              <div class="col-md-2 col-xs-12"><br><button onclick="window.location.href='../../../view/transaction/PM/main.php'" id="btn_reset" class="btn btn-block btn-danger btn-lg">Cancel</button></div>
+                <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-primary btn-lg">Reset</button></div>
+
+                <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+              <!--//
 window.location='../../transaction/steps/main.php
                 2nd panel body-->
 
-              </div>
-              </div>
-              </div><!--//first panel body-->
+            
 
 
               </div>
+
             </section>
+
+          
           </div>
         </div>
       </div>
