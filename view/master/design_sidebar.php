@@ -26,7 +26,7 @@ for page ../../../view/.../main.php
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Maintenance <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
             <li><a href="../../../view/maintenance/equipment/main.php">Equipment</a></li>
-            <li><a href="../../../view/maintenance/labor/main.php">Labor</a></li>
+            <!-- <li><a href="../../../view/maintenance/labor/main.php">Labor</a></li> -->
             <li><a href="../../../view/maintenance/materials/main.php">Materials</a></li>
            <li class="divider"></li>
            <li><a href="../../../view/maintenance/client/main.php">Client</a></li>

@@ -149,7 +149,7 @@ function validate_form(v){
 err = false;
 if(v==1)
 	{
-		if($('#f_type_cat').val()=='')
+		if($('#f_type_cat').val()=='none')
 		{
 		err = true;
 		$('#f_type_cat_div').addClass('has-error');
@@ -158,27 +158,70 @@ if(v==1)
 		{
 		$('#f_type_cat_div').removeClass('has-error');
 		}
+		if($('#f_type_percent').val()=='')
+		{
+		err = true;
+		$('#f_type_percent_div').addClass('has-error');
+		}
+	else
+		{
+		$('#f_type_percent_div').removeClass('has-error');
+		}
+
+
 		return err;
 	}
+
+	
 else if(v==0)
 	{
 
-		if($('#f_type_subcat').val()=='')
+		if($('#f_code').val()=='')
 		{
 		err = true;
-		$('#f_type_subcat_div').addClass('has-error');
+		$('#f_code_div').addClass('has-error');
 		}
 		else
-		$('#f_type_subcat_div').removeClass('has-error');
+		$('#f_code_div').removeClass('has-error');
+//
+		if($('#f_part').val()=='none')
+		{
+		err = true;
+		$('#f_part_div').addClass('has-error');
+		}
+		else
+		{
+		$('#f_part_div').removeClass('has-error');
+		}
 
-		if($('#modal_category').val()=='none')
+		if($('#f_desc').val()=='')
 		{
 		err = true;
-		$('#modal_category_div').addClass('has-error');
+		$('#f_desc_div').addClass('has-error');
 		}
 		else
 		{
-		$('#modal_category_div').removeClass('has-error');
+		$('#f_desc_div').removeClass('has-error');
+		}
+
+		if($('#f_amnt').val()=='')
+		{
+		err = true;
+		$('#f_amnt_div').addClass('has-error');
+		}
+		else
+		{
+		$('#f_amnt_div').removeClass('has-error');
+		}
+
+		if($('#f_pert').val()=='')
+		{
+		err = true;
+		$('#f_pert_div').addClass('has-error');
+		}
+		else
+		{
+		$('#f_pert_div').removeClass('has-error');
 		}
 		return err;
 	}
@@ -199,14 +242,21 @@ else
 function reset(){
 	//tae('All fields has been cleared')
 	$('#btn_save').val('create');
-	$('#f_type_cat').val("");
-	$('#f_type_cat_div').removeClass('has-error');
+	$('#modal_equip_type').val('none');
+	$('#modal_equip_type_div').removeClass('has-error');
+	$('#f_type_percent').val('');
+	$('#f_type_percent_div').removeClass('has-error');
 	$('#btn_save1').val('create');
-	$('#f_type_subcat').val("");
-	$('#modal_category').val('none');
-	$('#f_type_subcat').removeClass('has-error');
-	$('#modal_category_div').removeClass('has-error');
-	$('#f_type_subcat_div').removeClass('has-error');
+	$('#f_code').val('');
+	$('#f_code_div').removeClass('has-error');
+	$('#f_part').val('none');
+	$('#f_part_div').removeClass('has-error');
+	$('#f_desc').val('');
+	$('#f_desc_div').removeClass('has-error');
+	$('#f_amnt').val('');
+	$('#f_amnt_div').removeClass('has-error');
+	$('#f_pert').val('');
+	$('#f_pert_div').removeClass('has-error');
 }
 
 
