@@ -66,6 +66,36 @@
         </label>
         <input type="date" id="date_target" required="required"  class="form-control col-md-7 col-xs-12">
      </div>
+
+     <div>
+              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-code">Equipment to be Deployed <span class="required">*</span>
+              </label>
+              <input type="text" id="proj_code" required="required" class="form-control col-md-7 col-xs-12" placeholder="Name">
+             <br><br>
+           </div>
+    <div>
+              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-code"><span class="required"></span>
+              </label>
+              <input type="Number" id="proj_code" required="required" class="form-control col-md-7 col-xs-12" placeholder="No. of Units">
+             <br><br>
+           </div>
+
+
+    <div>
+              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-code">Tools to be Deployed <span class="required">*</span>
+              </label>
+              <input type="text" id="proj_code" required="required" class="form-control col-md-7 col-xs-12" placeholder="Name">
+             <br><br>
+           </div>
+
+           <div>
+              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-code">
+              </label>
+              <input type="Number" id="proj_code" required="required" class="form-control col-md-7 col-xs-12" placeholder="No . of Units">
+             <br><br>
+           </div>
+
+
       </div>
   <input type="hidden" id="proj_name" required="required" value='<?=$_SESSION["name"];?>' class="form-control col-md-7 col-xs-12">
 
