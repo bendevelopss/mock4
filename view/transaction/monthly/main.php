@@ -58,7 +58,8 @@
           <h1>
            Report
             <small>MONTHLY ACCOMPLISHMENT REPORT</small>
-          </h1>                              
+          </h1>    
+                                 
         </section>
 
 
@@ -68,15 +69,18 @@
          
 
           <div class="row" >              
-          <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="col-lg-12 col-sm-12 col-xs-12 ">
+           
               <div class="box box-solid">
                 <div class="box-header">     
                   
                   <h1>
            
             <small>Cost Details</small>
-          </h1>   
-                    <div class="row" style="margin-top:25px">
+          </h1> 
+          <hr style="border: 0.5px solid #f00">  
+
+                    <div class="row" style="margin-top:25px;">
 
                     <div class="col-md-3 col-xs-12" >
                       <label id="custnameErr" ><font color="darkred">*</font>Project Cost :</label>
@@ -84,7 +88,7 @@
                        <span class="input-group-addon">₱</span>
                        <input type="number" placeholder=" Search Name ">
                       </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
+                      
                     </div> <!-- /.col-->  <!--Customer Field-->
 
                       <div class="col-md-3 col-xs-12" id="custnameDiv">
@@ -109,12 +113,16 @@
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
 
+
+
                   </div><!--/.row-->
 
                   <h1>
            
             <small>Project Expenditures</small>
-          </h1>   
+
+          </h1> 
+          <hr style="border: 0.5px solid #f00">  
                     <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12" >
@@ -149,7 +157,8 @@
                        <h1>
            
             <small>Percentage Accomplishment</small>
-          </h1>   
+          </h1> 
+          <hr style="border: 0.5px solid #f00">  
                     <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12">
@@ -213,6 +222,7 @@
            
             <small>Project Duration</small>
           </h1>   
+          <hr style="border: 0.5px solid #f00">  
                     <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12">
@@ -259,7 +269,7 @@
                   </div><!--/.row-->
 
 
-
+                  <hr style="border: 0.5px solid #f00">  
                  
 
                     <!-- address rows -->
