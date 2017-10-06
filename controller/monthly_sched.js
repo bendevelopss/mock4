@@ -2,6 +2,7 @@
 	populate_table_mat();
 	populate_table_eqt();
 	populate_table_lab();
+	populate_item();
 	$('#btn_save').val('create');
 
 
@@ -23,7 +24,7 @@ function populate_table_mat(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/monthly_sched/populate_table_mat.php",
+	  url: "../../../model/monthly_sched/mat/populate_table_mat.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
@@ -35,12 +36,9 @@ function populate_table_mat(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_mat.fnAddData
-	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],s[i][6],s[i][7],s[i][8],s[i][9],
 
 
-	      	'<a href="../../../view/transaction/part_item-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>set Items</a>'+'   '+
-	      	'<a href="../../../view/transaction/steps/main_team.php?contract='+s[i][0]+'"  data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set team</a>'+'   '+
-	      	'<a href="../../../view/transaction/steps/main_add.php?contract='+s[i][0]+'"  data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set Add more Info</a>',
 	      ],false);
 	      table_mat.fnDraw();
 
@@ -53,7 +51,7 @@ function populate_table_eqt(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/monthly_sched/populate_table_eqt.php",
+	  url: "../../../model/monthly_sched/eqt/populate_table_eqt.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
@@ -65,12 +63,9 @@ function populate_table_eqt(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_eqt.fnAddData
-	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],s[i][6],s[i][7],
 
 
-	      	'<a href="../../../view/transaction/part_item-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>set Items</a>'+'   '+
-	      	'<a href="../../../view/transaction/steps/main_team.php?contract='+s[i][0]+'"  data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set team</a>'+'   '+
-	      	'<a href="../../../view/transaction/steps/main_add.php?contract='+s[i][0]+'"  data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set Add more Info</a>',
 	      ],false);
 	      table_eqt.fnDraw();
 
@@ -87,7 +82,7 @@ function populate_table_lab(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/monthly_sched/populate_table_lab.php",
+	  url: "../../../model/monthly_sched/lab/populate_table_lab.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
@@ -102,12 +97,7 @@ function populate_table_lab(){
 	      ([
 	      	s[i].contract_id,s[i].proj_name,multiple_projects(s[i].proj_team),
 
-
-	      	'<a href="../../../view/transaction/monthly_sched/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly Schedule</a>'+'   '+
-	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>'+'   '+
-	      	'<a href="../../../view/transaction/Weekly/main.php?contract='+s[i].contract_id+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
-	      	'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>',
-	      ],false);
+			],false);
 	      table_lab.fnDraw();
 
 	    }
@@ -344,3 +334,23 @@ title: "Updated",
 
 
 })
+
+function populate_item(selector){
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/pay_item/populate_table_main.php",
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){
+			  		var c = $('#item_sel');
+			        c.empty();
+			        c.html('<option selected="selected" value="none">--Item--</option>');
+			        for(var i = 0; i < s.length; i++) {
+			        c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
+			        }
+
+
+			  }
+			});
+		}

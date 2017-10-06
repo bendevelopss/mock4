@@ -58,7 +58,7 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 1%">Contract ID</th>
-                                        <th style="width: 30%">Project Name</th>
+                                        <th style="width: 20%">Project Name</th>
                                         <th style="width: 15%">Team</th>
                                         <th style="width: 10%">Reports</th>
 
