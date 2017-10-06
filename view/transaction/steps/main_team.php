@@ -39,57 +39,57 @@ $v=$_GET["contract"];
 
             Project Engineer/Field Engineer <span class="required">*</span>
             <div id="PI_div">
-            <select id="PI" class="form-control" required="">
-              <option value="">Select..</option>
-            </select>
-          </div>
+              <select id="PI" class="form-control" required="">
+                <option value="">Select..</option>
+              </select>
+            </div>
             <br>
             <div id="Materials_div">
-            Materials Engineer <span class="required">*</span>
-            <select id="Materials" class="form-control" required="">
-             <option value="">Select..</option>
-           </select>
-         </div>
+              Materials Engineer <span class="required">*</span>
+              <select id="Materials" class="form-control" required="">
+               <option value="">Select..</option>
+             </select>
+           </div>
            <br>
 
            Foreman <span class="required">*</span>
            <div id="Foreman_div">
-           <select id="Foreman" class="form-control" required="">
-            <option value="">Select..</option>
-          </select>
-        </div>
+             <select id="Foreman" class="form-control" required="">
+              <option value="">Select..</option>
+            </select>
+          </div>
           <br>
 
           Warehouse-in-Charge <span class="required">*</span>
           <div id="Warehouse_div">
-          <select id="Warehouse" class="form-control" required="">
-            <option value="">Select..</option>
-          </select>
-        </div>
+            <select id="Warehouse" class="form-control" required="">
+              <option value="">Select..</option>
+            </select>
+          </div>
           <br>
 
           Equipment-in-Charge <span class="required">*</span>
           <div id="Equipment-in-Charge_div">
-          <select id="Equipment-in-Charge" class="form-control" required="">
-            <option value="">Select..</option>
-          </select>
-        </div>
+            <select id="Equipment-in-Charge" class="form-control" required="">
+              <option value="">Select..</option>
+            </select>
+          </div>
           <br>
           Safety Officer <span class="required">*</span>
           <div id="Safety_div">
-          <select id="Safety" class="form-control" required="">
-            <option value="">Select..</option>
-          </select>
-        </div>
+            <select id="Safety" class="form-control" required="">
+              <option value="">Select..</option>
+            </select>
+          </div>
           <br>
 
           Timekeeper <span class="required">*</span>
         </label>
         <div id="Timekeeper_div">
-        <select id="Timekeeper" class="form-control" required="">
-          <option value="">Select..</option>
-        </select>
-      </div>
+          <select id="Timekeeper" class="form-control" required="">
+            <option value="">Select..</option>
+          </select>
+        </div>
         <br>
 
 
