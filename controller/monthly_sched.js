@@ -2,8 +2,9 @@
 	populate_table_mat();
 	populate_table_eqt();
 	populate_table_lab();
-	populate_item();
-	$('#btn_save').val('create');
+	populate_item(cont_id);
+	populate_eqt();
+	$('#btn_save1').val('create');
 
 
 
@@ -94,8 +95,7 @@ function populate_table_lab(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_lab.fnAddData
-	      ([
-	      	s[i].contract_id,s[i].proj_name,multiple_projects(s[i].proj_team),
+	    ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],s[i][6],s[i][7],
 
 			],false);
 	      table_lab.fnDraw();
@@ -106,14 +106,8 @@ function populate_table_lab(){
 	//ajax end
 } //
 
-function multiple_projects(obj){
-	let projects = '';
-	obj.map((tae)=>{
-		projects = `${tae.opt_mgr} ,${tae.field_engr} ,${tae.mtrls_engr} ,${tae.foreman} ,${tae.wrh_incharge},${tae.eqpt_incharge},${tae.safety_officer},${tae.timekeeper} `
-	})
-	return projects;
-}
 
+//codes for equipment
 function table_row_view(id){
 	reset();
 	$("#myModal").modal("show");
@@ -139,41 +133,208 @@ function table_row_view(id){
 
 
 
-$('#btn_reset').click(function(){ reset(); tae();})
+$('#btn_reset').click(function(){ reset1(); tae();})
 
 function validate_form(){
 	err = false;
 
-	if($('#f_ID').val()==''){
-		err = true;
-		$('#f_ID_div').addClass('has-error');
-	}
-	else
-		$('#f_ID_div').removeClass('has-error');
-	if($('#f_name').val()==''){
-		err = true;
-		$('#f_name_div').addClass('has-error');
-	}
-	else
-		$('#f_name_div').removeClass('has-error');
-	if($('#f_cont').val()==''){
-		err = true;
-		$('#f_cont_div').addClass('has-error');
-	}
-	else
-		$('#f_cont_div').removeClass('has-error');
-	if($('#f_email').val()==''){
-		err = true;
-		$('#f_email_div').addClass('has-error');
-	}
-	else
-		$('#f_email_div').removeClass('has-error');
 
 	return err;
 }
 
 
 function reset(){
+	$('#btn_save').val('create');
+	//tae('All fields of '+$('#f_job').val()+' has been cleared')
+
+
+
+
+}
+
+
+
+function tae()
+{
+
+
+swal({
+
+title: "Cleared",
+  text: "Will close in 1 second",
+  type: "success",
+  timer: 1000,
+  showConfirmButton: false
+
+
+});
+
+
+
+}
+
+function table_row_del(id){
+//sweet start
+swal({
+  title: "Do you want to Delete?",
+
+
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Delete",
+  cancelButtonText: "Cancel",
+  closeOnConfirm: false,
+  closeOnCancel: false
+},
+function(isConfirm){
+  if (isConfirm) {
+    swal("Deleted!", "Data Deleted", "success");
+  	//ajax  start
+  	$.ajax ({
+		type: "POST",
+		url: "../../../model/project/delete.php",
+		data: 'id='+id,
+		dataType: 'json',
+		cache: false,
+		success: function(s){populate_table_mat()}
+	});
+	//ajax end
+
+
+  } else {
+    swal("Cancelled", "User Cancelled", "error");
+  }
+});
+
+
+
+
+}
+
+
+
+
+
+
+$('#btn_save').click(function(){
+
+	if(validate_form()==true){}
+	else{
+
+
+		// var item = $('#item_sel').val();
+		var qty = $('#f_qty1').val();
+		var desc = $('#eqt_sel').val()
+		var dur = $('#f_dur1').val();		
+		var w1 = $('#f_w11').val();
+		var w2 = $('#f_w21').val();
+		var w3 = $('#f_w31').val();
+		var w4 = $('#f_w41').val()
+		var w5 = $('#f_w51').val();
+		var dataString = 'qty='+qty+"&desc="+desc+"&dur="+dur+"&w1="+w1+"&w2="+w2+"&w3="+w3+"&w4="+w4+"&w5="+w5;
+
+
+
+
+		console.log(dataString);
+
+		if(this.value=='create'){ //CREATE MODE
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/monthly_sched/eqt/create.php",
+			  data: dataString,
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){	}
+			});
+			//ajax end
+		  	//alert('Saved');
+
+swal({
+
+title: "Saved",
+  text: "Will close in 1 seconds.",
+  type: "success",
+  timer: 1200,
+  showConfirmButton: false
+
+
+});
+		  	reset();
+				$("#myModal").modal("hide");
+		  	populate_table_main();
+		}
+		else{ //UPDATE MODE
+			var id = this.value;
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/project/update.php",
+			  data: dataString+'&id='+id,
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){}
+			});
+			//ajax end
+		  	swal({
+
+title: "Updated",
+  text: "Will close in 1 seconds.",
+  type: "success",
+  timer: 1200,
+  showConfirmButton: false
+
+
+});
+		  	reset();
+				$("#myModal").modal("hide");
+		  	populate_table_main();
+		}
+	}
+
+
+
+})
+
+//code for matreq
+function table_row_view(id){
+	reset();
+	$("#myModal").modal("show");
+		//ajax now
+	$.ajax ({
+	  type: "POST",
+	  url: "../../../model/project/fetch.php",
+	  data: 'id='+id,
+	  dataType: 'json',
+	  cache: false,
+	  success: function(s){
+	  	$('#btn_save').val(id);
+	  	$('#f_ID').val(id);
+		$('#f_name').val(s[0][1]);
+	  	$('#f_cont').val(s[0][3]);
+	  	$('#f_add').val(s[0][4]);
+	  	$('#f_job').val(s[0][2]);
+	  	$('#f_email').val(s[0][5]);
+	  }
+	});
+	//ajax end
+}
+
+
+
+$('#btn_reset1').click(function(){ reset1(); tae();})
+
+function validate_form1(){
+	err = false;
+
+
+	return err;
+}
+
+
+function reset1(){
 	$('#btn_save').val('create');
 	//tae('All fields of '+$('#f_job').val()+' has been cleared')
 	$('#f_ID').val('');
@@ -237,11 +398,10 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){populate_table_mat()}
 	});
 	//ajax end
-		reset();
-		populate_table_main();
+
 
   } else {
     swal("Cancelled", "User Cancelled", "error");
@@ -258,18 +418,23 @@ function(isConfirm){
 
 
 
-$('#btn_save').click(function(){
+$('#btn_save1').click(function(){
 
 	if(validate_form()==true){}
 	else{
 
-		var ID = $('#f_ID').val();
-		var name = $('#f_name').val();
-		var job = $('#f_job').val();
-		var contact = $('#f_cont').val();
-		var email = $('#f_email').val()
-		var address = $('#f_add').val();
-		var dataString = 'ID='+ID+'&name='+name+'&job='+job+"&email="+email+"&contact="+contact+"&address="+address;
+
+		var item = $('#item_sel').val();
+		var bal = $('#f_bal').val();
+		var prj = $('#f_prj').val();
+		var desc = $('#f_desc').val()
+		var dur = $('#f_dur').val();		
+		var w1 = $('#f_w1').val();
+		var w2 = $('#f_w2').val();
+		var w3 = $('#f_w3').val();
+		var w4 = $('#f_w4').val()
+		var w5 = $('#f_w5').val();
+		var dataString = 'item='+item+'&bal='+bal+'&prjted='+prj+"&desc="+desc+"&dur="+dur+"&w1="+w1+"&w2="+w2+"&w3="+w3+"&w4="+w4+"&w5="+w5;
 
 
 
@@ -280,7 +445,7 @@ $('#btn_save').click(function(){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/project/create.php",
+			  url: "../../../model/monthly_sched/mat/create.php",
 			  data: dataString,
 			  dataType: 'json',
 			  cache: false,
@@ -335,17 +500,37 @@ title: "Updated",
 
 })
 
-function populate_item(selector){
+function populate_item(id){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
 			  url: "../../../model/pay_item/populate_table_main.php",
+			  data:"cont_id="+id ,
 			  dataType: 'json',
 			  cache: false,
 			  success: function(s){
 			  		var c = $('#item_sel');
 			        c.empty();
 			        c.html('<option selected="selected" value="none">--Item--</option>');
+			        for(var i = 0; i < s.length; i++) {
+			        c.append('<option value='+s[i][0]+'>'+s[i][3]+'</option>');
+			        }
+
+
+			  }
+			});
+		}
+		function populate_eqt(id){
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/equipment/populate_table_main.php",
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){
+			  		var c = $('#eqt_sel');
+			        c.empty();
+			        c.html('<option selected="selected" value="none">--Equip--</option>');
 			        for(var i = 0; i < s.length; i++) {
 			        c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
 			        }

@@ -1,4 +1,10 @@
-<?php include('../../../controller/master/log.php');?>
+<?php include('../../../controller/master/log.php');
+
+$types=$_GET["contract"];
+echo'<input type="hidden" id="type" value="'.$types.'">';
+        ?>
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include("../../../view/master/design.html");//header and design ?>
@@ -62,47 +68,47 @@
                             <div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
 
 
-                             <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+                             <div class="col-sm-4 col-xs-12" id="f_item_div" class='form-group'>
                               <label><font color="darkred">*</font>Item Number</label> <!-- Category -->
                                <select class="form-control input-lg" id='item_sel' required> 
                               <option value="none" ></option>
                               </select>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_bal_div" class='form-group'>
                               <label><font color="darkred">*</font>Balanced</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_ID" required>
+                              <input type="number" class="form-control input-lg" id="f_bal" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_prjted_div" class='form-group'>
                               <label><font color="darkred">*</font>Projected</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_name" required>
+                              <input type="number" class="form-control input-lg" id="f_prj" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_desc_div" class='form-group'>
                               <label><font color="darkred">*</font>Work Description</label> <!-- Category -->
-                              <input type="text" class="form-control input-lg" id="f_job" required>
+                              <input type="text" class="form-control input-lg" id="f_desc" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_dur_div" class='form-group'>
                               <label><font color="darkred">*</font>Duration</label> <!-- Category -->
-                              <input type="text" class="form-control input-lg" id="f_ID" required>
+                              <input type="text" class="form-control input-lg" id="f_dur" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_w1_div" class='form-group'>
                               <label><font color="darkred">*</font>Week 1</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_ID" required>
+                              <input type="number" class="form-control input-lg" id="f_w1" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_w2_div" class='form-group'>
                               <label><font color="darkred">*</font>Week 2</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_ID" required>
+                              <input type="number" class="form-control input-lg" id="f_w2" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_w3_div" class='form-group'>
                               <label><font color="darkred">*</font>Week 3</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_name" required>
+                              <input type="number" class="form-control input-lg" id="f_w3" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_w4_div" class='form-group'>
                               <label><font color="darkred">*</font>Week 4</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_name" required>
+                              <input type="number" class="form-control input-lg" id="f_w4" required>
                             </div>
-                            <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+                            <div class="col-sm-4 col-xs-12" id="f_w5_div" class='form-group'>
                               <label><font color="darkred">*</font>Week 5</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_name" required>
+                              <input type="number" class="form-control input-lg" id="f_w5" required>
                             </div>
 
 
@@ -112,10 +118,10 @@
                           </div> <!-- /.row -->
 
                         </div>
+ <div class="col-md-2 col-xs-12"><br><button id="btn_reset1" class="btn btn-block btn-lg">Reset</button></div>
 
-                        <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
-
-                        <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save1" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                        
                         <div class="modal-footer">
                         </div>
                       </div>
@@ -134,45 +140,43 @@
                           <div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
 
 
-                           <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
-                            <label><font color="darkred">*</font>Item Number</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_ID" required>
+                           <div class="col-sm-4 col-xs-12" id="f_desc1_div" class='form-group'>
+                            <label><font color="darkred">*</font>Description</label> <!-- Category -->
+                               <select class="form-control input-lg" id='eqt_sel' required> 
+                              <option value="none" ></option>
+                              </select>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
-                            <label><font color="darkred">*</font>Balanced</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_ID" required>
+                          <div class="col-sm-4 col-xs-12" id="f_qty1_div" class='form-group'>
+                            <label><font color="darkred">*</font> Quantity</label> <!-- Category -->
+                            <input type="number" class="form-control input-lg" id="f_qty1" required>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
-                            <label><font color="darkred">*</font>Projected</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_name" required>
+                          <div class="col-sm-4 col-xs-12" id="f_dur1_div" class='form-group'>
+                            <label><font color="darkred">*</font>Estimated Duration</label> <!-- Category -->
+                            <input type="number" class="form-control input-lg" id="f_dur1" required>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
+                          <div class="col-sm-4 col-xs-12" id="f_desc1_div" class='form-group'>
                             <label><font color="darkred">*</font>Work Description</label> <!-- Category -->
-                            <input type="text" class="form-control input-lg" id="f_job" required>
+                            <input type="text" class="form-control input-lg" id="f_desc1" required>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
-                            <label><font color="darkred">*</font>Duration</label> <!-- Category -->
-                            <input type="text" class="form-control input-lg" id="f_ID" required>
-                          </div>
-                          <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+                          <div class="col-sm-4 col-xs-12" id="f_w11_div" class='form-group'>
                             <label><font color="darkred">*</font>Week 1</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_ID" required>
+                            <input type="number" class="form-control input-lg" id="f_w11" required>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+                          <div class="col-sm-4 col-xs-12" id="f_w21_div" class='form-group'>
                             <label><font color="darkred">*</font>Week 2</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_ID" required>
+                            <input type="number" class="form-control input-lg" id="f_w21" required>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+                          <div class="col-sm-4 col-xs-12" id="f_w31_div" class='form-group'>
                             <label><font color="darkred">*</font>Week 3</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_name" required>
+                            <input type="number" class="form-control input-lg" id="f_w31" required>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+                          <div class="col-sm-4 col-xs-12" id="f_w41_div" class='form-group'>
                             <label><font color="darkred">*</font>Week 4</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_name" required>
+                            <input type="number" class="form-control input-lg" id="f_w41" required>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+                          <div class="col-sm-4 col-xs-12" id="f_w51_div" class='form-group'>
                             <label><font color="darkred">*</font>Week 5</label> <!-- Category -->
-                            <input type="number" class="form-control input-lg" id="f_name" required>
+                            <input type="number" class="form-control input-lg" id="f_w51" required>
                           </div>
 
 
@@ -491,10 +495,10 @@
 </div>
 </div>
 </div>
-<script src="../../../controller/monthly_sched.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
 
 <script type="text/javascript">
+      var cont_id=$("#type").val();
   $(document).ready(function(){
     var next = 1;
     $(".add-more").click(function(e){
@@ -525,6 +529,8 @@
   });
 
 </script>
+<script src="../../../controller/monthly_sched.js" type="text/javascript"></script>
+
 
 </body>
 </html>
