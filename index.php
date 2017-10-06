@@ -146,200 +146,86 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
 </div>
 </div>
 
-
 <div class="content-wrapper">
   <div class="container">
-   <div class="row">
-    <div class="col-lg-10s">
+    <div class="row">
+      <div class="col-lg-10s">
      <h2><?php echo(strtoupper($persan_user_type)); ?> DASHBOARD</h2>   
    </div>
    <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="alert alert-info">
+            <strong>Welcome <?php echo($persan_user_type).', ';?></strong> Select On the Menu Below
+         </div>
+
+       </div>
+     </div>
+   </div>
    <div class="row">
-    <div class="col-xs-12">
-      <div class="alert alert-info">
-        <strong>Welcome <?php echo($persan_user_type).', ';?></strong> Select On the Menu Below
+    <div class="col-md-12">
+        <h4 class="page-head-line">MAINTENANCE</h4>
+
+      </div>         
+
+
+ <a href="">
+   <div class="row">
+     <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="dashboard-div-wrapper bk-clr-one">
+        <i class="fa fa-truck fa-3x" style="padding-bottom: 15px"></i>
+        <div class="progress progress-striped active">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+          </div>
+
+        </div>
+        <h5>EQUIPMENT </h5>
       </div>
-
     </div>
-  </div>
-</div>
 
-<h4 class="page-head-line">LATEST PROJECTS</h4>
+  </a>
 
-
-
-
-<a href="">
- <div class="row">
+  <a href="">
    <div class="col-md-3 col-sm-3 col-xs-6">
-    <div class="dashboard-div-wrapper bk-clr-one">
-      <i class="fa fa-folder-open fa-3x" style="padding-bottom: 15px"></i>
+    <div class="dashboard-div-wrapper bk-clr-two">
+      <i class="fa fa-wrench fa-3x" style="padding-bottom: 15px"></i>
       <div class="progress progress-striped active">
-        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
         </div>
 
       </div>
-      <h5>PROJECT 1 </h5>
+      <h5>MATERIALS </h5>
     </div>
   </div>
-
-</a>
-
-<a href="">
- <div class="col-md-3 col-sm-3 col-xs-6">
-  <div class="dashboard-div-wrapper bk-clr-two">
-    <i class="fa fa-folder-open fa-3x" style="padding-bottom: 15px"></i>
-    <div class="progress progress-striped active">
-      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-      </div>
-
-    </div>
-    <h5>PROJECT 2 </h5>
-  </div>
-</div>
 
 </a>
 <a href="users.html">
   <div class="col-md-3 col-sm-3 col-xs-6">
     <div class="dashboard-div-wrapper bk-clr-three" >
-      <i  class="fa fa-folder-open fa-3x" style="padding-bottom: 15px"></i>
+      <i  class="fa fa-users fa-3x" style="padding-bottom: 15px"></i>
       <div class="progress progress-striped active">
         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
         </div>
       </div>
-      <h5>PROJECT 3 </h5>
+      <h5>CLIENT </h5>
     </div>
   </div>
 </a>
 
-<div class="content-wrapper">
-  <div class="container">
-   <div class="row">
-    
-    
-   </div>
-   
-   <h4 class="page-head-line">TRANSACTION</h4>
-
-   
-
-
-   <a href="view/transaction/steps/main_contract.php">
-     <div class="row">
-       <div class="col-md-3 col-sm-3 col-xs-6">
-        <div class="dashboard-div-wrapper bk-clr-one">
-          <i class="fa fa-folder-open-o fa-3x" style="padding-bottom: 15px"></i>
-          <div class="progress progress-striped active">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-            </div>
-
-          </div>
-          <h5>CREATE PROJECT </h5>
+<a href="users.html">
+  <div class="col-md-3 col-sm-3 col-xs-6">
+    <div class="dashboard-div-wrapper bk-clr-four" style="vertical-align: middle;">
+      <i  class="fa fa-user-plus fa-3x" style="padding-bottom: 15px"></i>
+      <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
         </div>
       </div>
-
-    </a>
-
-    <a href="view/transaction/PM/main.php">
-     <div class="col-md-3 col-sm-3 col-xs-6">
-      <div class="dashboard-div-wrapper bk-clr-two">
-        <i class="fa fa-users fa-3x" style="padding-bottom: 15px"></i>
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-          </div>
-
-        </div>
-        <h5>LIST OF CONTRACTS</h5>
-      </div>
+      <h5>EMPLOYEE </h5>
     </div>
-
-  </a>
-  <a href="view/transaction/PI/main.php">
-    <div class="col-md-3 col-sm-3 col-xs-6">
-      <div class="dashboard-div-wrapper bk-clr-three" >
-        <i  class="fa fa-book fa-3x" style="padding-bottom: 15px"></i>
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-          </div>
-        </div>
-        <h5>LIST OF PROJECTS</h5>
-      </div>
-    </div>
-  </a>
-
-
-</div>
-
-
-</div>
+  </div>
 </a>
 
-<div class="content-wrapper">
-  <div class="container">
-
-    <h4 class="page-head-line">MAINTENANCE</h4>
-    
-
-
-    <a href="view/maintenance/equipment/main.php">
-     <div class="row">
-       <div class="col-md-3 col-sm-3 col-xs-6">
-        <div class="dashboard-div-wrapper bk-clr-one">
-          <i class="fa fa-truck fa-3x" style="padding-bottom: 15px"></i>
-          <div class="progress progress-striped active">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-            </div>
-
-          </div>
-          <h5>EQUIPMENT </h5>
-        </div>
-      </div>
-
-    </a>
-
-    <a href="view/maintenance/materials/main.php">
-     <div class="col-md-3 col-sm-3 col-xs-6">
-      <div class="dashboard-div-wrapper bk-clr-two">
-        <i class="fa fa-wrench fa-3x" style="padding-bottom: 15px"></i>
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-          </div>
-
-        </div>
-        <h5>MATERIALS </h5>
-      </div>
-    </div>
-
-  </a>
-  <a href="view/maintenance/client/main.php">
-    <div class="col-md-3 col-sm-3 col-xs-6">
-      <div class="dashboard-div-wrapper bk-clr-three" >
-        <i  class="fa fa-users fa-3x" style="padding-bottom: 15px"></i>
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-          </div>
-        </div>
-        <h5>CLIENT </h5>
-      </div>
-    </div>
-  </a>
-
-  <a href="view/maintenance/employee/main.php">
-    <div class="col-md-3 col-sm-3 col-xs-6">
-      <div class="dashboard-div-wrapper bk-clr-four" style="vertical-align: middle;">
-        <i  class="fa fa-user-plus fa-3x" style="padding-bottom: 15px"></i>
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-          </div>
-        </div>
-        <h5>EMPLOYEE </h5>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="content-wrapper">
-  <a href="view/maintenance/scope/main.php">
+<a href="">
    <div class="row">
      <div class="col-md-3 col-sm-3 col-xs-6">
       <div class="dashboard-div-wrapper bk-clr-one">
@@ -355,7 +241,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
 
   </a>
 
-  <a href="view/maintenance/subcontractor/main.php">
+  <a href="">
    <div class="col-md-3 col-sm-3 col-xs-6">
     <div class="dashboard-div-wrapper bk-clr-two">
       <i class="fa fa-user fa-3x" style="padding-bottom: 15px"></i>
@@ -369,7 +255,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   </div>
 
 </a>
-<a href="view/maintenance/part/main.php">
+<a href="users.html">
   <div class="col-md-3 col-sm-3 col-xs-6">
     <div class="dashboard-div-wrapper bk-clr-three" >
       <i  class="fa fa-sitemap fa-3x" style="padding-bottom: 15px"></i>
@@ -386,41 +272,13 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
 
 </div>
 
-<div class="content-wrapper">
-  <div class="container">
-   <div class="row">
-    
-    
-   </div>
-   
-   <h4 class="page-head-line">UTILITIES</h4>
 
-   
-
-
-   <a href="view/others/manage/main.php">
-     <div class="row">
-       <div class="col-md-3 col-sm-3 col-xs-6">
-        <div class="dashboard-div-wrapper bk-clr-one">
-          <i class="fa fa-users fa-3x" style="padding-bottom: 15px"></i>
-          <div class="progress progress-striped active">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-            </div>
-
-          </div>
-          <h5>MANAGE USERS </h5>
-        </div>
-      </div>
-
-    </a>
-
-
-
-
-  </div>
-
-</a>
 </div>
+<div class="col-md-12">
+        <h4 class="page-head-line">MAINTENANCE</h4>
+
+      </div>    
+
 
 <?php include("view/master/design_end_index.html"); //footer?>  
 
