@@ -8,10 +8,10 @@
  $amnt = trim($_POST['amnt']);
  $part = trim($_POST['part']);
  
-    $sql = "INSERT INTO pay_item(pay_item_id,contract_id,pay_item_code,part_id,description,percent,qty,progress,status) values((select lpad (no,6,'PI') from pay_item as lb where no = (select max(no) from pay_item as l)),?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO pay_item(pay_item_id,contract_id,pay_item_code,`part-trans_id`,description,percent,qty,status) values((select lpad (no,6,'PI') from pay_item as lb where no = (select max(no) from pay_item as l)),?,?,?,?,?,?,?)";
  
    $q = $conn->prepare($sql);
-   $q -> execute(array($id,$code,$part,$desc,$pert,$amnt,0,'active'));
+   $q -> execute(array($id,$code,$part,$desc,$pert,$amnt,'active'));
  
  
  $conn = null;

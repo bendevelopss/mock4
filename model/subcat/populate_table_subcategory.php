@@ -3,7 +3,7 @@
 $type=$_POST['types'];
 
 
-  $sql = "SELECT * FROM subcategories as s,categories as c where c.status='active' and c.description=? and s.category_id=c.category_id group by subcat_id";
+  $sql = "SELECT * FROM subcategories as s,categories as c where c.status='active' and s.status='active' and c.description=? and s.category_id=c.category_id group by subcat_id";
   $q = $conn->prepare($sql);
   $q -> execute(array($type));
   $browse = $q -> fetchAll();

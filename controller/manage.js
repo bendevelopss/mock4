@@ -1,5 +1,6 @@
 	reset();
 	populate_table_main();
+	populate_empID();
 	$('#btn_save').val('create');
 
 
@@ -260,3 +261,30 @@ title: "Updated",
 
 
 })
+
+
+function populate_empID(catz){
+			//ajax now
+
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/employee/populate_table_main.php",
+			  data: "cat="+catz,
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){
+			  		console.log(s);
+			  		var c = $('#f_ID');
+			        c.empty();
+			        c.html('<option value="none" selected="selected">--Select--</option>');
+			        for(var i = 0; i < s.length; i++) {
+			        let iselected = '';
+			        // if(s[i][0] == selector){ iselected='selected="selected"' }
+			        c.append('<option value='+s[i][0]+' '+iselected+'>'+s[i][1]+'</option>');
+
+			        }
+
+
+			  }
+			});
+		}

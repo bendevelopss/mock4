@@ -6,232 +6,156 @@
 
 
 <body>
-<div class="se-pre-con"></div>
-<?php include("../../../view/master/design_sidebar.php");//header and design ?>
-                <!--**********************************-->
-            <div class="row" style="padding-top: 25px;">
-                <div class="col-md-12">
-                    <h4 class="page-head-line">WEEKLY ACCOMPLISHMENT REPORT</h4>
-                        <div class="panel-body">
+  <div class="se-pre-con"></div>
+  <?php include("../../../view/master/design_sidebar.php");//header and design ?>
+  <!--**********************************-->
+  <div class="row" style="padding-top: 25px;">
+    <div class="col-md-12">
+      <h4 class="page-head-line">WEEKLY ACCOMPLISHMENT REPORT</h4>
+      <div class="panel-body">
 
-<div class="row">
-  <div class="row">
-                        <div class="col-sm-1 col-xs-2">
-                          <h4 class="box-title">
-                               <button 
-                              onclick="window.location.href='../../../view/transaction/PM/main.php'" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
-                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-times" ></i> </button>                               
-                          </h4>                             
-                        </div> 
-
-                        <div class="col-sm-1 col-xs-2">
-                          <h4 class="box-title">
-                               <button role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
-                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-check" style="color:green"></i> </button>                               
-                          </h4>                             
-                        </div>      
-                                           
-                        <div class="col-xs-6"></div> <!--empty space-->
-
-                        
-
-                      </div>
-                    <div class="col-md-6 col-lg-12">
-                        <div class="panel panel-default">
-                        <div class="panel-heading">
-<div class="wrapper">
       
-      <!-- Right side column. Contains the navbar and content of the page -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-           Report
-            <small>WEEKLY ACCOMPLISHMENT REPORT</small>
-          </h1>                              
-        </section>
+          <div class="row">
+            
+
+         <div class="col-xs-6"></div> <!--empty space-->
 
 
-        <!-- Main content -->
-        <section class="content">
 
-         
+       </div>
+       <div class="col-md-6 col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="wrapper">
 
-          <div class="row" >              
-          <div class="col-lg-12 col-sm-12 col-xs-12">
-              <div class="box box-solid">
-                <div class="box-header">     
-                  <div class="row" style="margin-top:25px">
-
-                    <div class="col-md-3 col-xs-12">
-                      <label id="custnameErr" ><font color="darkred">*</font>Work Description :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input type="text" placeholder=" Search Name ">
-                      </div>    
-                      
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Unit:</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input type="text" placeholder=" Search Name ">
-                      </div>   
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Quantity :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input type="number" placeholder=" Search Name ">
-                      </div>      
-                      
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
-                    <div class="col-md-3 col-xs-12">
-                      <label><font color="darkred">*</font>Unit Cost:</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input type="number" placeholder=" Search Name ">
-                      </div>   
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
- 
-
-                       <div class="col-md-3 col-xs-12" >
-                      <label><font color="darkred">*</font>Amount :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
-
-                       <div class="col-md-3 col-xs-3" >
-                      <label><font color="darkred">*</font>Weight :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon">%</i></span>
-                        <input type="number" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
-
-                       
-
-                    <hr>
-
-                  </div><!--/.row-->
-
+              <!-- Right side column. Contains the navbar and content of the page -->
+              <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
                   <h1>
-           
-            <small>ACCOMPLISHMENT (QUANTITY)</small>
-          </h1>   
+                   Report
+                   <small>WEEKLY ACCOMPLISHMENT REPORT</small>
+                 </h1>                              
+               </section>
+               <hr style="border: 0.5px solid #f00">  
 
-                       <div class="row" >              
-          <div class="col-lg-12 col-sm-12 col-xs-12">
-              <div class="box box-solid">
-                <div class="box-header">     
-                  <div class="row" style="margin-top:25px">
-
-                    <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>Previous :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
-                      
-                    <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>This period :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
-
-                    <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>To date :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
-
-                    
-
-                    <hr>
-
-                  </div><!--/.row-->
+               <!-- Main content -->
+               <section class="content">
 
 
-           
-            <h1>
-           
-            <small>AMOUNT</small>
-          </h1>   
 
-                       <div class="row" >              
-          <div class="col-lg-12 col-sm-12 col-xs-12">
-              <div class="box box-solid">
-                <div class="box-header">     
-                  <div class="row" style="margin-top:25px">
+                <div class="row" >              
+                  <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="box box-solid">
+                      <div class="box-header">     
+                        <div class="row" >
 
-                    <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>Previous :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
-                      
-                    <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>This period :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
 
-                    <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>To date :</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
+             </div><!--/.row-->
 
-                    <div class="col-md-3 col-xs-12" >
-                      <label><font color="darkred">*</font>Weight Accompished:</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon">%</span>
-                        <input type="number" class="form-control" >
-                      </div>    
-                    </div> <!-- /.col-->  
-                    
+             <div class="row" style="margin-top:25px">
+                <div class="col-sm-6 col-xs-12">
+                  <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
+                    <thead>
+                      <th>Work Description</th>                         
+                      <th>Unit</th>                         
+                      <th>Quantity</th>     
+                      <th>Unit Cost</th>    
+                      <th>Amount</th>     
+                      <th>Weight</th>           
+                    </thead>
 
-                    <hr>
-
-                  </div><!--/.row-->
-                        </div>
-                        <div class="panel-body">
-
+                    <tbody></tbody>            
+                  </table> 
+                </div> <!-- /. col --> 
               </div>
+
+             <h1>
+
+              <small>ACCOMPLISHMENT (QUANTITY)</small>
+            </h1>   
+            <hr style="border: 0.5px solid #f00">  
+            <div class="row" >              
+              <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="box box-solid">
+                  <div class="box-header">     
+       
+
+               </div><!--/.row-->
+               <div class="row" style="margin-top:25px">
+                <div class="col-sm-6 col-xs-12">
+                  <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
+                    <thead>
+                      <th>Previous</th>                         
+                      <th>This period</th>                         
+                      <th>To date</th>     
+                                
+                    </thead>
+
+                    <tbody></tbody>            
+                  </table> 
+                </div> <!-- /. col --> 
               </div>
+
+
+               <h1>
+
+                <small>AMOUNT</small>
+              </h1>   
+              <hr style="border: 0.5px solid #f00">  
+              <div class="row" >              
+             
+
+              
+
+               </div><!--/.row-->
+               <div class="row" style="margin-top:25px">
+                <div class="col-sm-6 col-xs-12">
+                  <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
+                    <thead>
+                      <th>Previous</th>                         
+                      <th>This period</th>                         
+                      <th>To date</th>     
+                      <th>Weight Accomplished</th>    
+                                
+                    </thead>
+
+                    <tbody></tbody>            
+                  </table> 
+                </div> <!-- /. col --> 
+              </div>
+
+             </div>
+             <div class="panel-body">
+
+             </div>
+           </div>
               </div><!--//
 window.location='../../transaction/steps/main.php
-                2nd panel body-->
+2nd panel body-->
 
-              </div>
-              </div>
-              </div><!--//first panel body-->
+</div>
+</div>
+</div><!--//first panel body-->
 
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-   <script src="../../../controller/steps-contract.js" type="text/javascript"></script>
+</div>
+  
+</section>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<div class="col-md-2 col-xs-12"><br><button onclick="window.location.href='../../../view/transaction/PM/main.php'" id="btn_reset" class="btn btn-block btn-danger btn-lg">Cancel</button></div>
+<div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-primary btn-lg">Reset</button></div>
+
+<div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+</div>
+<script src="../../../controller/steps-contract.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
 
 </body>

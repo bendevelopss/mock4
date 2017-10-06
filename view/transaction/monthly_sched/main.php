@@ -22,22 +22,7 @@
                     <h4 class="page-head-line">MONTHLY WORK SCHEDULE</h4>
                         <div class="panel-body">
                           <div class="row">
-                       <div class="col-sm-1 col-xs-2">
-                          <h4 class="box-title">
-                               <button 
-                              onclick="window.location.href='../../../view/transaction/PM/main.php'" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
-                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-times" ></i> </button>                               
-                          </h4>                             
-                        </div> 
-
-                        <div class="col-sm-1 col-xs-2">
-                          <h4 class="box-title">
-                               <button role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
-                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; "  > <i class="fa fa-check" style="color:green"></i> </button>                               
-                          </h4>                             
-                        </div>       
+                       
                                            
                         <div class="col-xs-6"></div> <!--empty space-->
 
@@ -58,7 +43,8 @@
           <h1 style="font-size: 18pt">
            Material Requirements
             
-          </h1>                              
+          </h1>            
+          <hr style="border: 0.5px solid #f00">                    
         </section>
 
 
@@ -66,12 +52,12 @@
         <section class="content">
 
          
-
+          
           <div class="row" >              
           <div class="col-lg-12 col-sm-12 col-xs-12">
               <div class="box box-solid">
                 <div class="box-header">     
-                  
+                   
                   
                     <div class="row" style="margin-top:25px">
 
@@ -79,7 +65,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Item Number :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -91,13 +77,14 @@
            
             <small>Material Quantity Required</small>
           </h1>   
+                  <hr style="border: 0.5px solid #f00">  
                     <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12" >
                       <label id="custnameErr" ><font color="darkred">*</font>Balance :</label>
                       <div class="input-group" style="margin-top:3px">
                       
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                      
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -106,7 +93,7 @@
                       <label><font color="darkred">*</font>Projected :</label>
                       <div class="input-group" style="margin-top:3px">
                       
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                      
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -143,14 +130,15 @@
                        <h1>
            
             <small>Weekly Schedule</small>
-          </h1>   
+          </h1>  
+                  <hr style="border: 0.5px solid #f00">   
                     <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12">
                       <label id="custnameErr" ><font color="darkred">*</font>Week 1 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
 
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
@@ -160,7 +148,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 2 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -169,7 +157,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 3 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -178,7 +166,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 4 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -187,7 +175,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 5 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -196,13 +184,14 @@
                   </div><!--/.row-->
 
                     <h1 style="font-size: 18pt">Equipment Requirements</h1>
+                    <hr style="border: 0.5px solid #f00">  
                     <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12" >
                       <label id="custnameErr" ><font color="darkred">*</font>Description :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="text" placeholder=" Search Name ">
+                       <input type="text" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -221,7 +210,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Estimated Duration :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="text" placeholder=" Search Name ">
+                       <input type="text" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -234,13 +223,14 @@
            
             <small>Schedule</small>
           </h1>   
+                    <hr style="border: 0.5px solid #f00">  
                     <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-xs-12">
                       <label id="custnameErr" ><font color="darkred">*</font>Week 1 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
 
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
@@ -250,7 +240,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 2 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -259,7 +249,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 3 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -268,7 +258,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 4 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -277,7 +267,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 5 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -288,13 +278,17 @@
                   <h1 style="font-size: 19pt">
            Manpower Requirements
           </h1>   
-                    <div class="row" style="margin-top:25px">
+<<<<<<< HEAD
+                  <hr style="border: 0.5px solid #f00">  
+=======
+>>>>>>> bernie
+                    <div class="row" style="margin-right:25px">
 
                     <div class="col-md-3 col-xs-12">
                       <label id="custnameErr" ><font color="darkred">*</font>Week 1 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
 
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
@@ -304,7 +298,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 2 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -313,7 +307,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 3 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -322,7 +316,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 4 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -331,7 +325,7 @@
                       <label id="custnameErr" ><font color="darkred">*</font>Week 5 :</label>
                       <div class="input-group" style="margin-top:3px">
                        
-                       <input type="number" placeholder=" Search Name ">
+                       <input type="number" >
                       </div>    
                       
                     </div> <!-- /.col-->  <!--Customer Field-->
@@ -390,6 +384,12 @@ window.location='../../transaction/steps/main.php
 
               </div>
             </section>
+            <div class="col-md-2 col-xs-12"><br><button onclick="window.location.href='../../../view/transaction/PM/main.php'" id="btn_reset" class="btn btn-block btn-danger btn-lg">Cancel</button></div>
+                <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-primary btn-lg">Reset</button></div>
+
+                <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+
+
           </div>
         </div>
       </div>
