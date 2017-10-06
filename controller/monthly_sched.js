@@ -1,43 +1,73 @@
 	reset();
-	populate_table_main();
-	populate_table_sub();
+	populate_table_mat();
+	populate_table_eqt();
+	populate_table_lab();
+	populate_item();
 	$('#btn_save').val('create');
 
 
 
-  var table_main = $('#table_main').dataTable({
+  var table_mat = $('#matTable').dataTable({
     "aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
     "aaSorting": []
   });  //Initialize the datatable
-  var table_sub = $('#table_submain').dataTable({
+  var table_eqt = $('#eqtTable').dataTable({
+    "aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
+    "aaSorting": []
+  });  //Initialize the datatable
+  var table_lab = $('#labTable').dataTable({
     "aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
     "aaSorting": []
   });  //Initialize the datatable
 
-function populate_table_main(){
+function populate_table_mat(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/project_edit/populate_table_main.php",
+	  url: "../../../model/monthly_sched/mat/populate_table_mat.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
 	  {
       	// console.log(s)
-	    table_main.fnClearTable();
+	    table_mat.fnClearTable();
 	    for(var i = 0; i < s.length; i++)
 	    {
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
-	      table_main.fnAddData
-	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
+	      table_mat.fnAddData
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],s[i][6],s[i][7],s[i][8],s[i][9],
 
 
-	      	'<a href="../../../view/transaction/part_item-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>set Items</a>'+'   '+
-	      	'<a href="../../../view/transaction/steps/main_team.php?contract='+s[i][0]+'"  data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set team</a>'+'   '+
-	      	'<a href="../../../view/transaction/steps/main_add.php?contract='+s[i][0]+'"  data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set Add more Info</a>',
 	      ],false);
-	      table_main.fnDraw();
+	      table_mat.fnDraw();
+
+	    }
+	  }
+	});
+	//ajax end
+} //
+function populate_table_eqt(){
+	//ajax now
+	$.ajax ({
+	  type: "POST",
+	  url: "../../../model/monthly_sched/eqt/populate_table_eqt.php",
+	  dataType: 'json',
+	  cache: false,
+	  success: function(s)
+	  {
+      	// console.log(s)
+	    table_eqt.fnClearTable();
+	    for(var i = 0; i < s.length; i++)
+	    {
+	    	//if(s[i][2]=='inactive'){enability='disabled'}
+
+	      table_eqt.fnAddData
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],s[i][6],s[i][7],
+
+
+	      ],false);
+	      table_eqt.fnDraw();
 
 	    }
 	  }
@@ -48,32 +78,27 @@ function populate_table_main(){
 
 
 
-function populate_table_sub(){
+function populate_table_lab(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/project/populate_table_main.php",
+	  url: "../../../model/monthly_sched/lab/populate_table_lab.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
 	  {
       	// console.log(s)
-	    table_sub.fnClearTable();
+	    table_lab.fnClearTable();
 	    for(var i = 0; i < s.length; i++)
 	    {
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
-	      table_sub.fnAddData
+	      table_lab.fnAddData
 	      ([
 	      	s[i].contract_id,s[i].proj_name,multiple_projects(s[i].proj_team),
 
-
-	      	'<a href="../../../view/transaction/monthly_sched/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly Schedule</a>'+'   '+
-	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>'+'   '+
-	      	'<a href="../../../view/transaction/Weekly/main.php?contract='+s[i].contract_id+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
-	      	'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>',
-	      ],false);
-	      table_sub.fnDraw();
+			],false);
+	      table_lab.fnDraw();
 
 	    }
 	  }
@@ -309,3 +334,23 @@ title: "Updated",
 
 
 })
+
+function populate_item(selector){
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/pay_item/populate_table_main.php",
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){
+			  		var c = $('#item_sel');
+			        c.empty();
+			        c.html('<option selected="selected" value="none">--Item--</option>');
+			        for(var i = 0; i < s.length; i++) {
+			        c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
+			        }
+
+
+			  }
+			});
+		}

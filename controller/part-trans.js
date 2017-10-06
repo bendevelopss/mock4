@@ -2,7 +2,6 @@ reset();
 populate_table_main(1);
 populate_table_main(0);
 populate_cat();
-populate_cats();
 
 $('#btn_save').val('create');
 $('#btn_save1').val('create');
@@ -27,8 +26,8 @@ if(table==1){
 
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/part_item-trans/populate_table_part.php",
-			data:"cont_id="+cont_id ,
+			url: "../../../model/part-trans/populate_table_part.php",
+			data:"types="+test ,
 			dataType: 'json',
 			cache: false,
 		success: function(s)
@@ -37,8 +36,9 @@ if(table==1){
 					table_category.fnClearTable();
 					for(var i = 0; i < s.length; i++)
 						{
+							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_category.fnAddData
-							([s[i][0],s[i][2],s[i][3],s[i][4],s[i][5],
+							([s[i][1],s[i][2],s[i][3],
 
 
 				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
@@ -55,8 +55,8 @@ if(table==1){
 			{
 					$.ajax ({
 			type: "POST",
-	  		url: "../../../model/pay_item/populate_table_main.php",
-			data:"cont_id="+cont_id ,
+			url: "../../../model/part-trans/populate_table_pay_item.php",
+			data:"types="+test ,
 			dataType: 'json',
 			cache: false,
 			success: function(s)
@@ -65,8 +65,9 @@ if(table==1){
 					table_subcategory.fnClearTable();
 					for(var i = 0; i < s.length; i++)
 						{
+							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_subcategory.fnAddData
-							([s[i][0],s[i][1]+' '+s[i][2],s[i][3],s[i][4],s[i][5],
+							([s[i][1],s[i][2],s[i][3],s[i][4],
 
 
 				'<button data-toggle="tooltip" onclick="table_row_view(this.value,0)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
@@ -147,7 +148,7 @@ function validate_form(v){
 err = false;
 if(v==1)
 	{
-		if($('#f_type_cat').val()=='none')
+		if($('#f_type_cat').val()=='')
 		{
 		err = true;
 		$('#f_type_cat_div').addClass('has-error');
@@ -156,70 +157,27 @@ if(v==1)
 		{
 		$('#f_type_cat_div').removeClass('has-error');
 		}
-		if($('#f_type_percent').val()=='')
-		{
-		err = true;
-		$('#f_type_percent_div').addClass('has-error');
-		}
-	else
-		{
-		$('#f_type_percent_div').removeClass('has-error');
-		}
-
-
 		return err;
 	}
-
-	
 else if(v==0)
 	{
 
-		if($('#f_code').val()=='')
+		if($('#f_type_subcat').val()=='')
 		{
 		err = true;
-		$('#f_code_div').addClass('has-error');
+		$('#f_type_subcat_div').addClass('has-error');
 		}
 		else
-		$('#f_code_div').removeClass('has-error');
-//
-		if($('#f_part').val()=='none')
-		{
-		err = true;
-		$('#f_part_div').addClass('has-error');
-		}
-		else
-		{
-		$('#f_part_div').removeClass('has-error');
-		}
+		$('#f_type_subcat_div').removeClass('has-error');
 
-		if($('#f_desc').val()=='')
+		if($('#modal_category').val()=='none')
 		{
 		err = true;
-		$('#f_desc_div').addClass('has-error');
+		$('#modal_category_div').addClass('has-error');
 		}
 		else
 		{
-		$('#f_desc_div').removeClass('has-error');
-		}
-
-		if($('#f_amnt').val()=='')
-		{
-		err = true;
-		$('#f_amnt_div').addClass('has-error');
-		}
-		else
-		{
-		$('#f_amnt_div').removeClass('has-error');
-		}
-
-		if($('#f_pert').val()=='')
-		{
-		err = true;
-		$('#f_pert_div').addClass('has-error');
-		}
-		else
-		{
-		$('#f_pert_div').removeClass('has-error');
+		$('#modal_category_div').removeClass('has-error');
 		}
 		return err;
 	}
@@ -240,21 +198,14 @@ else
 function reset(){
 	//tae('All fields has been cleared')
 	$('#btn_save').val('create');
-	$('#modal_equip_type').val('none');
-	$('#modal_equip_type_div').removeClass('has-error');
-	$('#f_type_percent').val('');
-	$('#f_type_percent_div').removeClass('has-error');
+	$('#f_type_cat').val("");
+	$('#f_type_cat_div').removeClass('has-error');
 	$('#btn_save1').val('create');
-	$('#f_code').val('');
-	$('#f_code_div').removeClass('has-error');
-	$('#f_part').val('none');
-	$('#f_part_div').removeClass('has-error');
-	$('#f_desc').val('');
-	$('#f_desc_div').removeClass('has-error');
-	$('#f_amnt').val('');
-	$('#f_amnt_div').removeClass('has-error');
-	$('#f_pert').val('');
-	$('#f_pert_div').removeClass('has-error');
+	$('#f_type_subcat').val("");
+	$('#modal_category').val('none');
+	$('#f_type_subcat').removeClass('has-error');
+	$('#modal_category_div').removeClass('has-error');
+	$('#f_type_subcat_div').removeClass('has-error');
 }
 
 
@@ -369,12 +320,11 @@ $('#btn_save').click(function(){
 if(validate_form(1)==true){}
 else{
 
-	var category =$('#modal_equip_type').val();
-	var id =cont_id ;
-	var type =$('#f_type_percent').val();
+	var category =$('#f_type_cat').val();
+	var type =test;
 
 
-	var dataString = 'category='+category+'&type='+ type+'&id='+ id;
+	var dataString = 'category='+category+'&type='+ type;
 
 
 
@@ -384,7 +334,7 @@ else{
 		//ajax now
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/part_item-trans/create.php",
+			url: "../../../model/subcat/create.php",
 			data: dataString,
 			dataType: 'json',
 			cache: false,
@@ -444,21 +394,20 @@ $('#btn_save1').click(function(){
 if(validate_form(0)==true){}
 else{
 
-		var code = $('#f_code').val();
-		var part = $('#f_part').val();
-		var id =cont_id 
-		var desc = $('#f_desc').val();
-		var amnt = $('#f_amnt').val();
-		var pert = $('#f_pert').val();
-		var dataString = 'code='+code+'&part='+part+'&desc='+desc+'&amnt='+amnt+'&pert='+pert+'&id='+id;
+	var category =$('#modal_category').val();
+	var subcate=$('#f_type_subcat').val();
+	var type =test;
 
-console.log(dataString);
+
+	var dataString = 'category='+category+'&subcategory='+ subcate+'&type='+ type;
+
+
 
 	if(this.value=='create'){ //CREATE MODE
 		//ajax now
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/pay_item/create.php",
+			url: "../../../model/subcat/create1.php",
 			data: dataString,
 			dataType: 'json',
 			cache: false,
@@ -516,40 +465,17 @@ function populate_cat(selector){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/part_item-trans/populate_part.php",
+			  url: "../../../model/part-trans/populate_part.php",
 			  dataType: 'json',
 			  cache: false,
 			  success: function(s){
-			  		var c = $('#modal_equip_type');
+			  		var c = $('#modal_equipment_type');
 			        c.empty();
 			        c.html('<option selected="selected" value="none">-Part-</option>');
 			        for(var i = 0; i < s.length; i++) {
 			          let iselected = '';
 			          if(s[i][0] == selector){ iselected='selected' }
-			          c.append('<option value='+s[i][0]+'>Part-'+s[i][2]+' '+s[i][1]+'</option>');
-			        }
-
-
-			  }
-			});
-		}
-function populate_cats(selector){
-			//ajax now
-			$.ajax ({
-			  type: "POST",
-			  url: "../../../model/part_item-trans/populate_part-trans.php",
-  			data:"cont_id="+cont_id ,
-			  dataType: 'json',
-			  cache: false,
-			  success: function(s){
-			  		var c = $('#f_part');
-			        c.empty();
-			        c.html('<option selected="selected" value="none">-Part-</option>');
-			        for(var i = 0; i < s.length; i++) {
-			          let iselected = '';
-			          if(s[i][0] == selector){ iselected='selected' }
-			          c.append('<option value='+s[i][0]+'>Part-'+s[i][2]+' '+s[i][1]+'</option>');
-			         
+			          c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
 			        }
 
 
