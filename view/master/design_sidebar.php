@@ -4,8 +4,8 @@ show specific links else not admin it will hide it)   using if else conditions i
 
 for page ../../../view/.../main.php
 -->
- 
- 
+
+
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -43,6 +43,7 @@ for page ../../../view/.../main.php
                             <li class="dropdown"">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Utility <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
+            <li><a href="../../../view/others/contract/main.php">Add New Contract</a></li>
             <li><a href="../../../view/others/manage/main.php">Manage Account</a></li>
           </ul>
         </li>

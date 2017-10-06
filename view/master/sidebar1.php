@@ -4,8 +4,8 @@ show specific links else not admin it will hide it)   using if else conditions i
 
 for page view/.../main.php
 -->
- 
- 
+
+
     <div  style="background-image:url(assets/img/1.jpg); height:200px width: 100px;">
 
         <div class="container">
@@ -25,10 +25,10 @@ for page view/.../main.php
 
               <p><h1 style="font-family: 'Cinzel'; font-size: 65px ">PERSAN Construction Inc.</h1></p>
             </div>
-            
+
         </div>
     </div>
-    
+
     <!-- LOGO HEADER END-->
     <section class="menu-section">
         <div class="container">
@@ -61,6 +61,7 @@ for page view/.../main.php
                             <li class="dropdown"">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Utility <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
+            <li><a href="../../../view/others/contract/main.php">Add New Contract</a></li>
             <li><a href="view/utilities/admin/main.php">Manage Account</a></li>
           </ul>
         </li>
