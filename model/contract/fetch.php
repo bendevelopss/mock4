@@ -3,7 +3,7 @@
 
   $id = $_POST['id'];
 
-  $sql = "SELECT contract_id FROM contract WHERE contract_id = ?";
+  $sql = "SELECT * FROM contract WHERE contract_id = ?";
   $q = $conn->prepare($sql);
   $q -> execute(array($id));
   $browse = $q -> fetchAll();

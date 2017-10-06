@@ -19,7 +19,7 @@ $.ajax ({
 	cache: false,
 	success: function(s)
 	{
-		// console.log(s)
+		 //console.log(s)
 		table_main.fnClearTable();
 		for(var i = 0; i < s.length; i++)
 		{
@@ -50,7 +50,7 @@ function table_row_view(id){
 reset();
 $("#myModal").modal("show");
 	//ajax now
-	$('#f_CID').val(s[0].contract_id);
+//	$('#f_CID').val(s[0].contract_id);
 $.ajax ({
 	type: "POST",
 	url: "../../../model/contract/fetch.php",
@@ -58,8 +58,10 @@ $.ajax ({
 	dataType: 'json',
 	cache: false,
 	success: function(s){
+		console.log(s)
 		$('#btn_save').val(id);
 		$('#f_CID').val(s[0].contract_id);
+
 	//	$('#f_name').val(s[0].scope_name);
 
 
@@ -75,12 +77,12 @@ $('#btn_reset').click(function(){ reset(); tae();})
 function validate_form(){
 err = false;
 
-if($('#f_name').val()==''){
+if($('#f_CID').val()==''){
 	err = true;
-	$('#f_name_div').addClass('has-error');
+	$('#f_CID_div').addClass('has-error');
 }
 else
-	$('#f_name_div').removeClass('has-error');
+	$('#f_CID_div').removeClass('has-error');
 
 return err;
 }
@@ -89,10 +91,10 @@ return err;
 function reset(){
 $('#btn_save').val('create');
 
-		$('#f_name').val('');
+		$('#f_CID').val('');
 
 
- 		$('#f_name_div').removeClass('has-error');
+ 		$('#f_CID_div').removeClass('has-error');
 
 
 
@@ -175,16 +177,16 @@ if(validate_form()==true){}
 else{
 
 
-	var name =$('#f_name').val();
-	var amount =$('#f_amount').val();
+	var id =$('#f_CID').val();
+	/*var amount =$('#f_amount').val();
 	var details =$('#f_contact').val();
 	var sched =$('#f_unit').val();
 	var scope =$('#f_scope').val();
 	var billing =$('#f_billing').val();
 	var duration =$('#f_duration').val();
 	var number =$('#f_personnel').val();
-
-	var dataString = 'job='+name+'&amount='+ amount+'&details='+ details+'&sched='+ billing+'&duration='+ duration+'&number='+ number;
+*/
+	var dataString = 'id='+id;
 
 
 
@@ -194,7 +196,7 @@ else{
 		//ajax now
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/scope/create.php",
+			url: "../../../model/contract/create.php",
 			data: dataString,
 			dataType: 'json',
 			cache: false,
@@ -223,7 +225,7 @@ title: "Saved",
 		//ajax now
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/scope/update.php",
+			url: "../../../model/contract/update.php",
 			data: dataString+'&id='+id,
 			dataType: 'json',
 			cache: false,
