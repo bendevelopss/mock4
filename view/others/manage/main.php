@@ -61,7 +61,10 @@
                                         <th>Username</th>
                                         <th>Type</th>
                                         <th>Status</th>
+<<<<<<< HEAD
                                         <th></th>
+=======
+>>>>>>> 386b3a6561ea6513bd9490af6ee919c6f5576d9f
                                         <th></th>
 
                                     </tr>
