@@ -5,7 +5,7 @@ $contract_id = trim($_POST['id']);
 $part_id = trim($_POST['category']);
 $percent = trim($_POST['type']);
 
-   $sql = "INSERT INTO `part-trans`(part_id,contract_id,percent,progress) values(?,?,?,?)";
+   $sql = "INSERT INTO `part-trans`(`part-trans_id`,contract_id,percent,progress) values(?,?,?,?)";
 
 
 

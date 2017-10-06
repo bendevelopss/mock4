@@ -1,1 +1,8 @@
 "# capstone" 
+
+
+
+SUBCONTRACTOR TABLE - ADDED AUTOINCREMENT
+					- FIXED VIEW (from number to text)
+
+SUBCATEGORIES - ADDED AUTOINCREMENT

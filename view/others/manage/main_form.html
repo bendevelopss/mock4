@@ -5,21 +5,31 @@
 <div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
 
 
- <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
-    <label><font color="darkred">*</font>ID</label> <!-- Category -->
-   <input type="text" class="form-control input-lg" id="f_ID" required>
-  </div>
- <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
-    <label><font color="darkred">*</font>Name</label> <!-- Category -->
-   <input type="text" class="form-control input-lg" id="f_name" required>
-  </div>
- <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
-    <label><font color="darkred">*</font>Job</label> <!-- Category -->
-   <input type="text" class="form-control input-lg" id="f_job" required>
-  </div>
+
+  <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'  >
+    <label><font color="darkred">*</font>Employee Name</label> <!--  EMPLOYEE ID -->
+     <select class="form-control input-lg" id="f_ID" required> 
+     	<option value ="none" selected="selected">Select</option>
+    </select>  </div>
 
 
+ <div class="col-sm-4 col-xs-12" id="f_username_div" class='form-group'>
+    <label><font color="darkred"></font>Username</label> <!-- Username -->
+   <input type="text" class="form-control input-lg" id="f_username" required>
+  </div>
 
+  <div class="col-sm-4 col-xs-12" id="f_userpass_div" class='form-group'>
+    <label><font color="darkred"></font>Password</label> <!-- pass -->
+   <input type="Password" class="form-control input-lg" id="f_userpass" required>
+  </div>
+
+<div class="col-sm-4 col-xs-12" id="f_usertype_div" class='form-group'  >
+    <label><font color="darkred">*</font>Type</label> <!--  type if proj manager, proj engr  -->
+     <select class="form-control input-lg" id="f_usertype" required>
+     	<option value="none" selected="selected">Select Type</option>
+     	<option value="pm">Project Manager</option>
+     	<option value="pe">Project Engineer</option>
+    </select>  </div>
 
 
 

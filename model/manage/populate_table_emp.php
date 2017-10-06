@@ -2,17 +2,16 @@
     include('../master/connect.php');
 
 
-  $sql = "SELECT * from user where status='active'";
+  $sql = "SELECT * from employee where status='active'";
   $q = $conn->prepare($sql);
   $q -> execute();
   $browse = $q -> fetchAll();
 
   foreach($browse as $fetch)
   {
-    $output[] = array ($fetch['user_id'],$fetch['user_name'], $fetch['user_type'],$fetch['status']);
+    $output[] = array ($fetch['emp_id'], $fetch['name']);
   }
 $conn = null;
 
 echo json_encode($output);
 ?>
-

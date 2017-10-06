@@ -27,8 +27,8 @@ $.ajax ({
 			table_main.fnAddData
 			([
 				s[i].scope_id,s[i].scope_name,
-				'<button data-toggle="tooltip" onclick="table_row_view(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
-				'<button data-toggle="tooltip" onclick="table_row_del(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete"> <i class="fa fa-trash"></i>Delete </button>',
+				'<button data-toggle="tooltip" onclick="table_row_view(this.value)" value='+s[i].scope_id+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
+				'<button data-toggle="tooltip" onclick="table_row_del(this.value)" value='+s[i].scope_id+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete"> <i class="fa fa-trash"></i>Delete </button>',
 			],false);
 			table_main.fnDraw();
 
@@ -58,14 +58,8 @@ $.ajax ({
 	cache: false,
 	success: function(s){
 		$('#btn_save').val(id);
-		$('#f_name').val(s[0][0]);
-		$('#f_amount').val(s[0][1]);
-		$('#f_contact').val(s[0][2]);
-		$('#f_scope').val(s[0][3]);
-		$('#f_billing').val(s[0][4]);
-		$('#f_duration').val(s[0][5]);
-		$('#f_personnel').val(s[0][6]);
-
+		$('#f_name').val(s[0].scope_name);
+		
 
 	}
 });
@@ -152,12 +146,14 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+populate_table_main();
+alert("worked");
+
+		}
 	});
 	//ajax end
-		reset();
-		populate_table_main();
-
+		
   } else {
     swal("Cancelled", "User Cancelled", "error");
   }
@@ -200,7 +196,9 @@ else{
 			data: dataString,
 			dataType: 'json',
 			cache: false,
-			success: function(s){	}
+			success: function(s){
+populate_table_main();
+				}
 		});
 		//ajax end
 		swal({
@@ -227,7 +225,10 @@ title: "Saved",
 			data: dataString+'&id='+id,
 			dataType: 'json',
 			cache: false,
-			success: function(s){}
+			success: function(s){
+populate_table_main();
+
+			}
 		});
 		//ajax end
 			swal({
