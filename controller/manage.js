@@ -53,12 +53,12 @@ function table_row_view(id){
 	  cache: false,
 	  success: function(s){
 	  	$('#btn_save').val(id);
-	  	$('#f_ID').val(id);
-		$('#f_name').val(s[0][1]);
-	  	$('#f_cont').val(s[0][3]);
-	  	$('#f_add').val(s[0][4]);
-	  	$('#f_job').val(s[0][2]);
-	  	$('#f_email').val(s[0][5]);
+	  	$('#f_ID').val(s[0][1]);
+		  $('#f_username').val(s[0][2]);
+	  	$('#f_userpass').val(s[0][3]);
+	  	$('#f_usertype').val(s[0][4]);
+	/*  	$('#f_job').val(s[0][4]);
+	  	$('#f_email').val(s[0][5]);*/
 	  }
 	});
 	//ajax end
@@ -191,12 +191,10 @@ $('#btn_save').click(function(){
 	else{
 
 		var ID = $('#f_ID').val();
-		var name = $('#f_name').val();
-		var job = $('#f_job').val();
-		var contact = $('#f_cont').val();
-		var email = $('#f_email').val()
-		var address = $('#f_add').val();
-		var dataString = 'ID='+ID+'&name='+name+'&job='+job+"&email="+email+"&contact="+contact+"&address="+address;
+		var name = $('#f_username').val();
+		var pass = $('#f_userpass').val();
+		var type = $('#f_usertype').val();
+		var dataString = 'ID='+ID+'&user_name='+name+'&user_pass='+pass+"&user_type="+type;
 
 
 
