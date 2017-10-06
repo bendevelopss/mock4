@@ -1,0 +1,117 @@
+DAILY ACCOMPLISHMENT REPORT
+---------------------------------------------------------------------------------
+INSERT INTO activities (activities_id, description, pay_item_id,station,qty,date,status)
+VALUES (?)
+
+INSERT INTO pay_item (contract_id, part-trans_id, pay_item_id, pay_item_code, description, percent, qty, unit_cost, unit, status)
+VALUES (?)
+
+INSERT INTO dailylabor (dlabor_id, mason, foreman, timekeeper, driver, operator, labor, guard, subcon, date, status)
+VALUES (?)
+
+INSERT INTO dailymat (dmat_id, description, qty, type, date, status)
+VALUES (?)
+
+INSERT INTO dailyeqpt (deqpt_id, eqpt_name, utilization, date, status)
+VALUES (?)
+
+INSERT INTO received (received_id, description, type, qty, date, status)
+VALUES (?)
+
+INSERT INTO dailyacco (dailyacco_id, contract_id, reports_id, date, day, weather_am, weather_pm, meeting_conducted, dlabor_id, dmat_id, deqpt_id, received_id, problems, visitors, prepared_by, approved_by, status)
+VALUES (?)
+
+ACTIVITIES SELECTION
+SELECT DISTINCT activities.description, activities.station, activities.qty 
+FROM activities, dailyacco
+WHERE activities.status='ACTIVE'
+AND
+activities.date=(SELECT date FROM dailyacco WHERE date='?')
+
+DAILYLABOR SELECTION
+SELECT dailylabor.mason, dailylabor.foreman, dailylabor.timekeeper, dailylabor.driver, dailylabor.operator, dailylabor.labor, dailylabor.guard, dailylabor.subcon, dailylabor.date 
+FROM dailylabor
+LEFT JOIN dailyacco ON dailyacco.dlabor_id=dailylabor.dlabor_id
+WHERE dailylabor.status='ACTIVE'
+AND
+dailylabor.date=(SELECT date FROM dailyacco WHERE date='?')
+
+DAILYEQPT SELECTION
+SELECT dailyeqpt.deqpt_id, dailyeqpt.eqpt_id, dailyeqpt.utilization, dailyeqpt.date
+FROM dailyeqpt
+LEFT JOIN dailyacco ON dailyacco.deqpt_id=dailyeqpt.deqpt_id
+INNER JOIN equipment ON dailyeqpt.eqpt_id=equipment.eqpt_id
+WHERE dailyeqpt.status='ACTIVE'
+AND
+dailyeqpt.date=(SELECT date FROM dailyacco WHERE date='?')
+
+DAILYMAT SELECTION
+SELECT dailymat.dmat_id, dailymat.material_id, dailymat.qty, dailymat.type, dailymat.date
+FROM dailymat
+LEFT JOIN dailyacco ON dailyacco.dmat_id=dailymat.dmat_id
+INNER JOIN materials ON dailymat.material_id=materials.material_id
+WHERE dailymat.status='ACTIVE'
+AND
+dailymat.date=(SELECT date FROM dailyacco WHERE date='?')
+
+RECEIVED SELECTION
+SELECT received.received_id, received.description, received.type, received.date
+FROM received
+LEFT JOIN dailyacco ON dailyacco.received_id=received.received_id
+WHERE received.status='ACTIVE'
+AND
+received.date=(SELECT date FROM dailyacco WHERE date='?')
+
+DAILYACCO (OTHERS) SELECTION
+SELECT dailyacco.dailyacco_id, dailyacco.contract_id, dailyacco.reports_id, dailyacco.date, dailyacco.day, dailyacco.weather_am, dailyacco.weather_pm, dailyacco.meeting_conducted, dailyacco.problems, dailyacco.visitors, dailyacco.prepared_by, dailyacco.approved_by
+FROM dailyacco
+INNER JOIN contract ON dailyacco.contract_id=contract.contract_id
+INNER JOIN reports ON dailyacco.reports_id=reports.reports_id
+INNER JOIN employee ON dailyacco.prepared_by=employee.name
+WHERE dailyacco.status='ACTIVE'
+AND dailyacco.date='?'
+--------------------------------------------------------------------------------------
+MONTHLY SCHEDULE
+--------------------------------------------------------------------------------------
+INSERT INTO monthlysched (monthlysched_id, proj_id, contract_id, month, cumulative_month, laborreq_id, matreq_id, eqptreq_id, remarks, prepared_by,approved_by)
+VALUES (?)
+
+INSERT INTO matreq (matreq_id, pay_item_id, mat_balance, mat_projected, work_des, duration, w1, w2, w3, w4, w5, date, status)
+VALUES (?)
+
+INSERT INTO laborreq (laborreq_id, description,qty, duration, w1, w2, w3, w4, w5, date, status)
+VALUES (?)
+
+INSERT INTO eqptreq (eqptreq_id, eqptreq.eqpt_id, eqptreq.qty, eqptreq.duration, eqptreq.w1, eqptreq.w2, eqptreq.w3, eqptreq.w4, eqptreq.w5, eqptreq.date, eqptreq.status)
+VALUES (?)
+
+SELECT matreq.pay_item_id, matreq.mat_balance, matreq.mat_projected, matreq.work_desc, matreq.duration, matreq.w1, matreq.w2, matreq.w3, matreq.w4, matreq.w5
+FROM matreq
+LEFT JOIN monthlysched ON monthlysched.matreq_id=matreq.matreq_id
+INNER JOIN pay_item ON matreq.pay_item_id=pay_item.pay_item_id
+INNER JOIN activities ON matreq.work_desc=activities.description
+WHERE matreq.status='ACTIVE'
+AND
+matreq.date=(SELECT date FROM monthlysched WHERE date='?')
+
+SELECT eqptreq.eqptreq_id, eqptreq.eqpt_name, eqptreq.qty, eqptreq.duration, eqptreq.w1, eqptreq.w2, eqptreq.w3, eqptreq.w4, eqptreq.w5
+FROM eqptreq
+LEFT JOIN monthlysched ON monthlysched.eqptreq_id=eqptreq.eqptreq_id
+INNER JOIN equipment ON equipment.eqpt_name=eqptreq.eqpt_name
+WHERE eqptreq.status='ACTIVE'
+AND
+eqptreq.date=(SELECT date FROM monthlysched WHERE date='?')
+
+SELECT laborreq.laborreq_id, laborreq.description, laborreq.qty, laborreq.duration, laborreq.w1, laborreq.w2, laborreq.w3, laborreq.w4, laborreq.w5
+FROM laborreq
+LEFT JOIN monthlysched ON monthlysched.laborreq_id=laborreq.laborreq_id
+WHERE laborreq.status='ACTIVE'
+AND
+laborreq.date=(SELECT date FROM monthlysched WHERE date='?')
+
+SELECT monthlysched.month, monthlysched.cumulative_month, project.proj_name, project.proj_location, project.start_date, project.target_date, monthlysched.remarks, monthlysched.prepared_by, monthlysched.approved_by
+FROM monthlysched
+INNER JOIN project ON monthlysched.proj_id=project.proj_id
+INNER JOIN contract ON monthlysched.contract_id=contract.contract_id
+WHERE monthlysched.status='ACTIVE'
+AND monthlysched.date='?'
