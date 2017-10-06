@@ -1,7 +1,7 @@
 <?php include('../../../controller/master/log.php');
 $types=$_GET["contract"];
 echo'<input type="hidden" id="type" value="'.$types.'">';
-
+        
 ?>
 
 <!DOCTYPE html>

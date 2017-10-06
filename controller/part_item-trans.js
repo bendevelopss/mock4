@@ -56,7 +56,6 @@ if(table==1){
 					$.ajax ({
 			type: "POST",
 	  		url: "../../../model/pay_item/populate_table_main.php",
-		//	url: "../../../model/part_item/populate_table_main.php",
 			data:"cont_id="+cont_id ,
 			dataType: 'json',
 			cache: false,
@@ -66,7 +65,6 @@ if(table==1){
 					table_subcategory.fnClearTable();
 					for(var i = 0; i < s.length; i++)
 						{
-							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_subcategory.fnAddData
 							([s[i][0],s[i][1]+' '+s[i][2],s[i][3],s[i][4],s[i][5],
 
