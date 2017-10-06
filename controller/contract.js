@@ -146,7 +146,7 @@ function(isConfirm){
   	//ajax  start
   	$.ajax ({
 		type: "POST",
-		url: "../../../model/scope/delete.php",
+		url: "../../../model/contract/delete.php",
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
