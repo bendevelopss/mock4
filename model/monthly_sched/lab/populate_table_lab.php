@@ -1,5 +1,5 @@
 <?php
-    include('../master/connect.php');
+    include('../../master/connect.php');
 
 
   $sql = "

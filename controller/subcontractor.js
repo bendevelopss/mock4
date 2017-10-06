@@ -194,11 +194,13 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+					reset();
+		populate_table_main();
+		}
 	});
 	//ajax end
-		reset();
-		populate_table_main();
+
 
   } else {
     swal("Cancelled", "User Cancelled", "error");
@@ -239,7 +241,8 @@ else{
 			data: dataString,
 			dataType: 'json',
 			cache: false,
-			success: function(s){	}
+			success: function(s){		reset();
+		populate_table_main();	}
 		});
 		//ajax end
 		swal({
@@ -266,7 +269,10 @@ title: "Saved",
 			data: dataString+'&id='+id,
 			dataType: 'json',
 			cache: false,
-			success: function(s){}
+			success: function(s){
+						reset();
+		populate_table_main();
+			}
 		});
 		//ajax end
 			swal({

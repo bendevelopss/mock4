@@ -64,7 +64,9 @@
 
                              <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
                               <label><font color="darkred">*</font>Item Number</label> <!-- Category -->
-                              <input type="number" class="form-control input-lg" id="f_ID" required>
+                               <select class="form-control input-lg" id='item_sel' required> 
+                              <option value="none" ></option>
+                              </select>
                             </div>
                             <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
                               <label><font color="darkred">*</font>Balanced</label> <!-- Category -->
@@ -380,7 +382,7 @@
 
                     <div class="row" style="margin-top:25px">
                       <div class="col-sm-6 col-lg-8">
-                        <table id="matTable" class="table table-condensed table-bordered table-hover table-striped" >
+                        <table id="eqtTable" class="table table-condensed table-bordered table-hover table-striped" >
                           <thead>
                             <th>Description</th>                         
                             <th>Quantity</th>                         
