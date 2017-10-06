@@ -16,14 +16,14 @@
                     </div>
                         <div class="panel-body">
                             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" onclick="reset();">
-                              Add New Record
+                              Add New User
                             </button>
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                            <h4 class="modal-title" id="myModalLabel">Add New User </h4>
                                         </div>
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
@@ -58,8 +58,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Job</th>
-                                        <th></th>
+                                        <th>Username</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
