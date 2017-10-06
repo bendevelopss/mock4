@@ -71,30 +71,30 @@ $('#btn_reset').click(function(){ reset(); tae();})
 function validate_form(){
 	err = false;
 
-	if($('#f_ID').val()==''){
+	if($('#f_ID').val()=='none'){
 		err = true;
 		$('#f_ID_div').addClass('has-error');
 	}
 	else
 		$('#f_ID_div').removeClass('has-error');
-	if($('#f_name').val()==''){
+	if($('#f_username').val()==''){
 		err = true;
-		$('#f_name_div').addClass('has-error');
+		$('#f_username_div').addClass('has-error');
 	}
 	else
-		$('#f_name_div').removeClass('has-error');
-	if($('#f_cont').val()==''){
+		$('#f_username_div').removeClass('has-error');
+	if($('#f_userpass').val()==''){
 		err = true;
-		$('#f_cont_div').addClass('has-error');
+		$('#f_userpass_div').addClass('has-error');
 	}
 	else
-		$('#f_cont_div').removeClass('has-error');
-	if($('#f_email').val()==''){
+		$('#f_userpass_div').removeClass('has-error');
+	if($('#f_usertype').val()=='none'){
 		err = true;
-		$('#f_email_div').addClass('has-error');
+		$('#f_usertype_div').addClass('has-error');
 	}
 	else
-		$('#f_email_div').removeClass('has-error');
+		$('#f_usertype_div').removeClass('has-error');
 
 	return err;
 }
@@ -103,17 +103,17 @@ function validate_form(){
 function reset(){
 	$('#btn_save').val('create');
 	//tae('All fields of '+$('#f_job').val()+' has been cleared')
-	$('#f_ID').val('');
-	$('#f_name').val('');
-	$('#f_cont').val('');
-	$('#f_email').val('');
+	$('#f_ID').val('none');
+	$('#f_username').val('');
+	$('#f_userpass').val('');
+	$('#f_usertype').val('none');
 	//$('#modal_user_type').
 
 
 	$('#f_ID_div').removeClass('has-error');
-	$('#f_name_div').removeClass('has-error');
-	$('#f_cont_div').removeClass('has-error');
-	$('#f_email_div').removeClass('has-error');
+	$('#f_username_div').removeClass('has-error');
+	$('#f_userpass_div').removeClass('has-error');
+	$('#f_usertype_div').removeClass('has-error');
 
 
 
