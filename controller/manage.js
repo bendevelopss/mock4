@@ -26,7 +26,7 @@ function populate_table_main(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_main.fnAddData
-	      ([s[i][0],s[i][1],s[i][2],
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
 
 
 	        '<button data-toggle="tooltip" onclick="table_row_view(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',

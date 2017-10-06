@@ -28,9 +28,9 @@
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
                                         </div>
-                                        
+
                                          <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
-                                         
+
                                          <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
                                          <div class="modal-footer">
                                         </div>
@@ -44,7 +44,7 @@
 <!--**********************************-->
 
 
-          
+
 
             <div class="row">
 
@@ -62,6 +62,8 @@
                                         <th>Type</th>
                                         <th>Status</th>
                                         <th></th>
+                                        <th></th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
