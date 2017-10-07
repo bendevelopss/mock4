@@ -15,7 +15,7 @@ $w5 = trim($_POST['w5']);
 
    $sql = 'INSERT INTO `eqptreq`( `eqptreq_id`, `eqpt_id`, `qty`, `duration`, `w1`, `w2`, `w3`, `w4`, `w5`, `status`) values((select lpad (no,6,"EQ") from eqptreq as mt where no = (select max(no) from eqptreq as e)),?,?,?,?,?,?,?,?,?)';
   $q = $conn->prepare($sql);
-  $q -> execute(array($qty,$desc,$dur,$w1 ,$w2 ,$w3 ,$w4,$w5,'ACTIVE'));
+  $q -> execute(array($desc,$qty,$dur,$w1 ,$w2 ,$w3 ,$w4,$w5,'ACTIVE'));
  
 
 $conn = null;

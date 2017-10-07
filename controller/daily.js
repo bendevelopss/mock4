@@ -252,7 +252,7 @@ function populate_used(){
 
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/subcat/populate_cat.php",
+			url: "../../../model/daily/used/populate_table_used.php",
 			dataType: 'json',
 			cache: false,
 		success: function(s)

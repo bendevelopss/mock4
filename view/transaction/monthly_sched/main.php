@@ -405,19 +405,19 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                     </div>
 
                     
-
+ <!-- 
                     <h1 style="font-size: 19pt">
                      Manpower Requirements
                    </h1>   
 
                    <hr style="border: 0.5px solid #f00">  
 
-                   <div class="row" style="margin-right:25px">
+                  <div class="row" style="margin-right:25px">
 
                     
                     <div class="col-md-2 col-xs-12"><br><button id="btn_save" data-target="#myModal3" data-toggle='modal' title="Add Record" data-placement='bottom' onclick="reset();"  class="btn btn-primary btn-lg">Add</button></div>
 
-                  </div><!--/.row-->
+                  </div><!--/.row
 
                   <div class="row" style="margin-top:25px">
                     <div class="col-sm-6 col-lg-8">
@@ -436,8 +436,8 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
 
                         <tbody></tbody>            
                       </table> 
-                    </div> <!-- /. col --> 
-                  </div>
+                    </div> <!-- /. col 
+                  </div> -->
                   <div class="row" style="margin-top:25px">
 
                     <div class="col-md-3 col-lg-5">
@@ -489,7 +489,7 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
 <div class="col-md-2 col-xs-12"><br><button onclick="window.location.href='../../../view/transaction/PM/main.php'" id="btn_reset" class="btn btn-block btn-danger btn-lg">Cancel</button></div>
 <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-primary btn-lg">Reset</button></div>
 
-<div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+<div class="col-md-2 col-xs-12"><br><button onclick="window.location.href='../../../view/transaction/PM/main.php'" id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
 
 
 </div>

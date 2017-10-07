@@ -1,7 +1,7 @@
 <?php include('../../../controller/master/log.php');
 $v=$_GET["contract"]; 
 ?>
-<input type="hidden" name="cont_id" value="<?=$v?>">
+<input type="hidden" id="cont_id" value="<?=$v?>">
 <!---->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
