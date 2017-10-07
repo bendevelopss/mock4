@@ -230,7 +230,8 @@ title: "Saved",
 			dataType: 'json',
 			cache: false,
 			success: function(s){
-populate_table_main();
+				alert('gumana');
+			populate_table_main();
 
 			}
 		});
