@@ -1,7 +1,7 @@
 <?php
     include('../master/connect.php');
 
-$contract_id = trim($_POST['contract_id']);
+$contract_id = trim($_POST['id']);
 
    $sql = "INSERT INTO contract(contract_id,status) values(?,?)";
 

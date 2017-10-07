@@ -1,6 +1,7 @@
 	reset();
 	populate_table_main();
 	populate_empID();
+	populate_CID();
 	$('#btn_save').val('create');
 
 
@@ -26,7 +27,7 @@ function populate_table_main(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_main.fnAddData
-	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],
 
 
 	        '<button data-toggle="tooltip" onclick="table_row_view(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
@@ -53,12 +54,13 @@ function table_row_view(id){
 	  cache: false,
 	  success: function(s){
 	  	$('#btn_save').val(id);
-	  	$('#f_ID').val(id);
-		$('#f_name').val(s[0][1]);
-	  	$('#f_cont').val(s[0][3]);
-	  	$('#f_add').val(s[0][4]);
-	  	$('#f_job').val(s[0][2]);
-	  	$('#f_email').val(s[0][5]);
+	  	$('#f_ID').val(s[0][1]);
+		  $('#f_username').val(s[0][2]);
+	  	$('#f_userpass').val(s[0][3]);
+			$('#f_usertype').val(s[0][4]);
+     	$('#f_CID').val(s[0][5]);
+	/*  	$('#f_job').val(s[0][4]);
+	  	$('#f_email').val(s[0][5]);*/
 	  }
 	});
 	//ajax end
@@ -96,6 +98,16 @@ function validate_form(){
 	else
 		$('#f_usertype_div').removeClass('has-error');
 
+		if($('#f_CID').val()=='none'){
+			err = true;
+			$('#f_CID_div').addClass('has-error');
+		}
+		else
+			$('#f_CID_div').removeClass('has-error');
+
+
+
+
 	return err;
 }
 
@@ -107,6 +119,7 @@ function reset(){
 	$('#f_username').val('');
 	$('#f_userpass').val('');
 	$('#f_usertype').val('none');
+	$('#f_CID').val('none');
 	//$('#modal_user_type').
 
 
@@ -114,6 +127,7 @@ function reset(){
 	$('#f_username_div').removeClass('has-error');
 	$('#f_userpass_div').removeClass('has-error');
 	$('#f_usertype_div').removeClass('has-error');
+	$('#f_CID_div').removeClass('has-error');
 
 
 
@@ -164,7 +178,9 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+			console.log(id);	
+		}
 	});
 	//ajax end
 		reset();
@@ -191,12 +207,12 @@ $('#btn_save').click(function(){
 	else{
 
 		var ID = $('#f_ID').val();
-		var name = $('#f_name').val();
-		var job = $('#f_job').val();
-		var contact = $('#f_cont').val();
-		var email = $('#f_email').val()
-		var address = $('#f_add').val();
-		var dataString = 'ID='+ID+'&name='+name+'&job='+job+"&email="+email+"&contact="+contact+"&address="+address;
+		var name = $('#f_username').val();
+		var pass = $('#f_userpass').val();
+		var type = $('#f_usertype').val();
+		var CID = $('#f_CID').val();
+
+		var dataString = 'ID='+ID+'&user_name='+name+'&user_pass='+pass+"&user_type="+type+"&contract_id="+CID;
 
 
 
@@ -211,7 +227,7 @@ $('#btn_save').click(function(){
 			  data: dataString,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){	}
+			  success: function(s){}
 			});
 			//ajax end
 		  	//alert('Saved');
@@ -236,10 +252,12 @@ title: "Saved",
 			$.ajax ({
 			  type: "POST",
 			  url: "../../../model/manage/update.php",
-			  data: dataString+'&id='+id,
+			  data: dataString+'&user='+id,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){}
+			  success: function(s){
+					console.log(s);
+				}
 			});
 			//ajax end
 		  	swal({
@@ -288,3 +306,26 @@ function populate_empID(catz){
 			  }
 			});
 		}
+
+
+
+				function populate_CID(selector){
+							//ajax now
+							$.ajax ({
+							  type: "POST",
+							  url: "../../../model/contract/populate_table_main.php",
+							  dataType: 'json',
+							  cache: false,
+							  success: function(s){
+									 console.log(s);
+							  		var c = $('#f_CID');
+							        c.empty();
+							        c.html('<option selected="selected" value="none">--Select--</option>');
+							        for(var i = 0; i < s.length; i++) {
+							        c.append('<option value='+s[i].contract_id+'>'+s[i].contract_id+'</option>');
+							        }
+
+
+							  }
+							});
+						}

@@ -1,22 +1,22 @@
 <?php
     include('../master/connect.php');
 
-$id = $_POST['id'];
-$name = trim($_POST['name']);
-$job = trim($_POST['job']);
-$email = trim($_POST['email']);
-$contact = trim($_POST['contact']);
-$address = trim($_POST['address']);
+    $emp_id = trim($_POST['ID']);
+    $user_id = trim($_POST['user']);
+    $user_name = trim($_POST['user_name']);
+    $user_pwd = trim($_POST['user_pass']);
+    $user_type = trim($_POST['user_type']);
+    $contract_id = trim($_POST['contract_id']);
 
 
 
+//  $sql = "UPDATE user SET user_name=?,user_pass=?,user_type=?,contract_id=?  WHERE user_id = ?";
+  $sql ="UPDATE user SET emp_id=?, user_name=?,user_pass=?,user_type=?,contract_id=? WHERE user_id = ?";
 
-  $sql = "UPDATE engineer SET engr_name=?,engr_type=?  WHERE engr_id = ?";
   $q = $conn->prepare($sql);
-  $q -> execute(array($name,$job,$id));
+  $q -> execute(array($emp_id,$user_name,$user_pwd,$user_type,$contract_id,$user_id));
 
 $conn = null;
 
 echo json_encode($output);
 ?>
-	

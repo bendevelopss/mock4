@@ -11,19 +11,19 @@
 <!--**********************************-->
                    <div class="row" style="padding-top: 25px;">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Manage Accounts</h4>
+                    <h4 class="page-head-line">Contracts</h4>
                     </div>
                     </div>
                         <div class="panel-body">
                             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" onclick="reset();">
-                              Add New User
+                              Add New Contract ID
                             </button>
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Add New User </h4>
+                                            <h4 class="modal-title" id="myModalLabel">Add Contract ID </h4>
                                         </div>
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
@@ -57,13 +57,8 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Username</th>
-                                        <th>Type</th>
-                                        <th>Contract ID</th>
-                                        <th>Status</th>
                                         <th></th>
-                                        <th></th>
+
 
                                     </tr>
                                 </thead>
@@ -77,7 +72,7 @@
                  <!-- End  ACCT POPULATE TABLE -->
 </div>
 
-    <script src="../../../controller/manage.js" type="text/javascript"></script>
+    <script src="../../../controller/contract.js" type="text/javascript"></script>
 
 <?php include("../../../view/master/design_end.html");//?>
 
