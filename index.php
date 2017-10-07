@@ -1,4 +1,5 @@
 <?php
+//edited
 if(!isset($_SESSION))
   { session_start();}
 ini_set('display_errors',1);
@@ -134,7 +135,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
 
         <ul class="dropdown-menu" role="menu" style="background-color: grey;">
           <li><a href="view/others/account/main.php">My Account</a></li>
-          <li><a href="#" onclick="return logout1();">Logout</a></li>
+          <li><a href="#" onClick="return logout1();">Logout</a></li>
         </ul>
       </div>
     </div>
