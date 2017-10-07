@@ -1,11 +1,11 @@
 <?php
     include('../master/connect.php');
 
-$id = $_POST['id'];
+$user_id = $_POST['id'];
 
-  $sql = "UPDATE engineer SET status = 'inactive' WHERE engr_id = ?";
+  $sql = "UPDATE user SET status = 'Inactive' WHERE user_id = ?";
   $q = $conn->prepare($sql);
-  $q -> execute(array($id));
+  $q -> execute(array($user_id));
 
 $conn = null;
 

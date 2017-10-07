@@ -57,7 +57,8 @@ function table_row_view(id){
 	  	$('#f_ID').val(s[0][1]);
 		  $('#f_username').val(s[0][2]);
 	  	$('#f_userpass').val(s[0][3]);
-	  	$('#f_usertype').val(s[0][4]);
+			$('#f_usertype').val(s[0][4]);
+     	$('#f_CID').val(s[0][5]);
 	/*  	$('#f_job').val(s[0][4]);
 	  	$('#f_email').val(s[0][5]);*/
 	  }
@@ -97,6 +98,16 @@ function validate_form(){
 	else
 		$('#f_usertype_div').removeClass('has-error');
 
+		if($('#f_CID').val()=='none'){
+			err = true;
+			$('#f_CID_div').addClass('has-error');
+		}
+		else
+			$('#f_CID_div').removeClass('has-error');
+
+
+
+
 	return err;
 }
 
@@ -108,6 +119,7 @@ function reset(){
 	$('#f_username').val('');
 	$('#f_userpass').val('');
 	$('#f_usertype').val('none');
+	$('#f_CID').val('none');
 	//$('#modal_user_type').
 
 
@@ -115,6 +127,7 @@ function reset(){
 	$('#f_username_div').removeClass('has-error');
 	$('#f_userpass_div').removeClass('has-error');
 	$('#f_usertype_div').removeClass('has-error');
+	$('#f_CID_div').removeClass('has-error');
 
 
 
@@ -165,7 +178,9 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+			console.log(id);	
+		}
 	});
 	//ajax end
 		reset();
@@ -195,7 +210,9 @@ $('#btn_save').click(function(){
 		var name = $('#f_username').val();
 		var pass = $('#f_userpass').val();
 		var type = $('#f_usertype').val();
-		var dataString = 'ID='+ID+'&user_name='+name+'&user_pass='+pass+"&user_type="+type;
+		var CID = $('#f_CID').val();
+
+		var dataString = 'ID='+ID+'&user_name='+name+'&user_pass='+pass+"&user_type="+type+"&contract_id="+CID;
 
 
 
@@ -210,7 +227,7 @@ $('#btn_save').click(function(){
 			  data: dataString,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){	}
+			  success: function(s){}
 			});
 			//ajax end
 		  	//alert('Saved');
@@ -235,10 +252,12 @@ title: "Saved",
 			$.ajax ({
 			  type: "POST",
 			  url: "../../../model/manage/update.php",
-			  data: dataString+'&id='+id,
+			  data: dataString+'&user='+id,
 			  dataType: 'json',
 			  cache: false,
-			  success: function(s){}
+			  success: function(s){
+					console.log(s);
+				}
 			});
 			//ajax end
 		  	swal({
@@ -289,28 +308,24 @@ function populate_empID(catz){
 		}
 
 
-		function populate_CID(catz){
-					//ajax now
 
-					$.ajax ({
-					  type: "POST",
-					  url: "../../../model/contract/populate_table_main.php",
-					  data: "cat="+catz,
-					  dataType: 'json',
-					  cache: false,
-					  success: function(s){
-					  		console.log(s);
-					  		var c = $('#f_CID');
-					        c.empty();
-					        c.html('<option value="none" selected="selected">--Select--</option>');
-					        for(var i = 0; i < s.length; i++) {
-					        let iselected = '';
-					        // if(s[i][0] == selector){ iselected='selected="selected"' }
-					        c.append('<option value='+s[i][0]+' '+iselected+'>'+s[i][1]+'</option>');
-
-					        }
+				function populate_CID(selector){
+							//ajax now
+							$.ajax ({
+							  type: "POST",
+							  url: "../../../model/contract/populate_table_main.php",
+							  dataType: 'json',
+							  cache: false,
+							  success: function(s){
+									 console.log(s);
+							  		var c = $('#f_CID');
+							        c.empty();
+							        c.html('<option selected="selected" value="none">--Select--</option>');
+							        for(var i = 0; i < s.length; i++) {
+							        c.append('<option value='+s[i].contract_id+'>'+s[i].contract_id+'</option>');
+							        }
 
 
-					  }
-					});
-				}
+							  }
+							});
+						}
