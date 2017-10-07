@@ -41,7 +41,7 @@
                      <hr style="border: 0.5px solid #f00">                             
                    </section>
 
-                   <!---------------------------modal start------------------------------------------>
+                   <!-----------------------------modal start-------------------------------------------->
 
                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                     <div class="modal-dialog">
@@ -56,15 +56,14 @@
 
 
                            <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
-                            <label><font color="darkred">*</font>Part</label> <!-- Category -->
-                            <input type="text" class="form-control input-lg" id="f_ID" required>
+                            <label><font color="darkred">*</font>Activity</label> <!-- Category -->
+                               <select class="form-control input-lg" id='act_sel' required> 
+                              <option value="none" ></option>
+                              </select>
                           </div>
-                          <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
-                            <label><font color="darkred">*</font>Item</label> <!-- Category -->
-                            <input type="text" class="form-control input-lg" id="f_ID" required>
-                          </div>
+
                           <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
-                            <label><font color="darkred">*</font>Name</label> <!-- Category -->
+                            <label><font color="darkred">*</font>Station</label> <!-- Category -->
                             <input type="text" class="form-control input-lg" id="f_name" required>
                           </div>
                           <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
@@ -243,9 +242,9 @@
                 <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>    
                 <div class="input-group" style="margin-top:3px">
 
-                  <input type="radio"> Yes
+                  <input type="radio" name="radiogroup"> Yes
                   <br>
-                  <input type="radio"> No
+                  <input type="radio" name="radiogroup"> No
                 </div>    
               </div> <!-- /.col-->  
 
@@ -275,9 +274,15 @@
               <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
                 <thead>
                   <th style="width:180px">Manpower</th>
-                  <th></th>                         
+                  <th>QTY</th>                         
                 </thead>                            
                 <tbody>
+                  <tr><td>work1</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work2</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work3</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work4</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work5</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work6</td><td><input type="number" name=""></td></tr>
                 </tbody>            
               </table> 
             </div> <!-- /. col --> 
