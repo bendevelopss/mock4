@@ -37,8 +37,8 @@
                       <h1>
                        Report
                        <small>DAILY ACCOMPLISHMENT REPORT</small>
-                     </h1>   
-                     <hr style="border: 0.5px solid #f00">                             
+                     </h1>
+                     <hr style="border: 0.5px solid #f00">
                    </section>
 
                    <!-----------------------------modal start-------------------------------------------->
@@ -57,7 +57,7 @@
 
                            <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
                             <label><font color="darkred">*</font>Activity</label> <!-- Category -->
-                               <select class="form-control input-lg" id='act_sel' required> 
+                               <select class="form-control input-lg" id='act_sel' required>
                               <option value="none" ></option>
                               </select>
                           </div>
@@ -90,7 +90,7 @@
                     </div>
                   </div>
                 </div>
-                //activities
+                <!-- //activities -->
                 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -110,7 +110,7 @@
                    </div>
                  </div>
                </div>
-               //manpower
+               <!-- //manpower -->
                <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -132,7 +132,7 @@
                  </div>
                </div>
              </div>
-             //used
+             <!-- //used -->
              <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -152,7 +152,7 @@
                </div>
              </div>
            </div>
-           //recieve                            
+           <!-- //recieve                             -->
 
 
            <!--------------------------modal end------------------------------------------>
@@ -161,45 +161,45 @@
 
 
 
-            <div class="row" >              
+            <div class="row" >
               <div class="col-lg-12 col-sm-12 col-xs-12">
                 <div class="box box-solid">
-                  <div class="box-header">     
+                  <div class="box-header">
                     <div class="row" style="margin-top:25px">
 
 
                       <div class="col-md-3 col-xs-12" >
-                        <label id="transdateErr" ><font color="darkred">*</font>Order Date :</label>    
+                        <label id="transdateErr" ><font color="darkred">*</font>Order Date :</label>
                         <div class="input-group" style="margin-top:3px">
                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                          <input id="transdate" value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                       </div>    
-                     </div> <!-- /.col-->  
+                       </div>
+                     </div> <!-- /.col-->
 
                      <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>Order Day :</label>    
+                      <label id="transdateErr" ><font color="darkred">*</font>Order Day :</label>
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                        <input id="transdate" value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
-                     </div>    
-                   </div> <!-- /.col-->  
+                     </div>
+                   </div> <!-- /.col-->
 
 
                  </div><!--/.row-->
 
 
-                 <hr style="border: 0.5px solid #f00">  
+                 <hr style="border: 0.5px solid #f00">
                  <div class="row" style="margin-top:25px">
 
 
 
                   <div class="col-sm-1 col-xs-2">
                     <h4 class="box-title">
-                     <button id="btn_save" data-target="#myModal" data-toggle='modal' title="Save Record" data-placement='bottom' class="btn text-green" onclick="reset();" 
+                     <button id="btn_save" data-target="#myModal" data-toggle='modal' title="Save Record" data-placement='bottom' class="btn text-green" onclick="reset();"
                      style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                     text-align: center; font-size:25px; background-color:white; "  >+ </button>                               
-                   </h4>                            
-                 </div>    
+                     text-align: center; font-size:25px; background-color:white; "  >+ </button>
+                   </h4>
+                 </div>
                </div><!--/.row-->
 
 
@@ -207,22 +207,22 @@
                <h1>
 
                 <small>Work Performed Today</small>
-              </h1>   
+              </h1>
 
               <div class="row" style="margin-top:25px">
                 <div class="col-sm-6 col-xs-12">
                   <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
                     <thead>
-                      <th>Activities</th>                         
-                      <th>Station</th>                         
-                      <th>Volume</th>                         
+                      <th>Activities</th>
+                      <th>Station</th>
+                      <th>Volume</th>
                     </thead>
 
-                    <tbody></tbody>            
-                  </table> 
-                </div> <!-- /. col --> 
+                    <tbody></tbody>
+                  </table>
+                </div> <!-- /. col -->
               </div>
-              <hr style="border: 0.5px solid #f00">  
+              <hr style="border: 0.5px solid #f00">
               <div class="row" style="margin-top:25px">
 
                 <div class="col-md-3 col-xs-12">
@@ -230,23 +230,23 @@
                   <div class="input-group" style="margin-top:3px">
                    <span class="input-group-addon">AM</i></span>
                    <input type="text" >
-                 </div>    
+                 </div>
 
                  <div class="input-group" style="margin-top:3px">
                    <span class="input-group-addon">PM</i></span>
                    <input type="text" >
-                 </div>  
+                 </div>
                </div> <!-- /.col-->  <!--Customer Field-->
 
                <div class="col-md-3 col-xs-12" >
-                <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>    
+                <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>
                 <div class="input-group" style="margin-top:3px">
 
                   <input type="radio" name="radiogroup"> Yes
                   <br>
                   <input type="radio" name="radiogroup"> No
-                </div>    
-              </div> <!-- /.col-->  
+                </div>
+              </div> <!-- /.col-->
 
 
 
@@ -254,18 +254,18 @@
 
 
             </div><!--/.row-->
-            <hr style="border: 0.5px solid #f00">  
+            <hr style="border: 0.5px solid #f00">
             <div class="row" style="margin-top:25px">
 
 
 
               <div class="col-sm-1 col-xs-2">
                 <h4 class="box-title">
-                 <button id="btn_save"  class="btn text-green" data-toggle="modal" data-target="#myModal1" onclick="reset();" 
+                 <button id="btn_save"  class="btn text-green" data-toggle="modal" data-target="#myModal1" onclick="reset();"
                  style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                 text-align: center; font-size:25px; background-color:white; "  >+</button>                            
-               </h4>                            
-             </div>    
+                 text-align: center; font-size:25px; background-color:white; "  >+</button>
+               </h4>
+             </div>
            </div><!--/.row-->
 
 
@@ -274,8 +274,8 @@
               <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
                 <thead>
                   <th style="width:180px">Manpower</th>
-                  <th>QTY</th>                         
-                </thead>                            
+                  <th>QTY</th>
+                </thead>
                 <tbody>
                   <tr><td>work1</td><td><input type="number" name=""></td></tr>
                   <tr><td>work2</td><td><input type="number" name=""></td></tr>
@@ -283,111 +283,111 @@
                   <tr><td>work4</td><td><input type="number" name=""></td></tr>
                   <tr><td>work5</td><td><input type="number" name=""></td></tr>
                   <tr><td>work6</td><td><input type="number" name=""></td></tr>
-                </tbody>            
-              </table> 
-            </div> <!-- /. col --> 
+                </tbody>
+              </table>
+            </div> <!-- /. col -->
           </div>
 
           <div class="row" style="margin-top:25px">
 
-           <hr style="border: 0.5px solid #f00">  
+           <hr style="border: 0.5px solid #f00">
 
            <div class="col-sm-1 col-xs-2">
             <h4 class="box-title">
-             <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();" 
+             <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();"
              style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-             text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
-           </h4>                            
-         </div>    
+             text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>
+           </h4>
+         </div>
        </div><!--/.row-->
        <div class="row" style="margin-top:25px">
         <div class="col-lg-6 col-xs-12">
           <table id="useTable" class="table table-condensed table-bordered table-hover table-striped" >
             <thead>
               <th  style="width:550px">Materials/Lubricants/Fuel Used</th>
-              <th  style="width:180px">Quantity</th>    
-              
+              <th  style="width:180px">Quantity</th>
+
             </thead>
 
 
-            <tbody></tbody>            
-          </table> 
-        </div> <!-- /. col --> 
+            <tbody></tbody>
+          </table>
+        </div> <!-- /. col -->
       </div>
 
       <div class="row" style="margin-top:25px">
 
-       <hr style="border: 0.5px solid #f00">  
+       <hr style="border: 0.5px solid #f00">
 
        <div class="col-sm-1 col-xs-2">
         <h4 class="box-title">
-         <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();" 
+         <button id="btn_save" data-toggle="modal" data-target="#myModal2"  class="btn text-green" onclick="reset();"
          style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-         text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
-       </h4>                            
-     </div>    
+         text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>
+       </h4>
+     </div>
    </div><!--/.row-->
    <div class="row" style="margin-top:25px">
     <div class="col-lg-5 col-xs-12">
       <table id="useTable" class="table table-condensed table-bordered table-hover table-striped" >
         <thead>
-          
-          <th  style="width:180px">Equipment Used</th> 
-          <th  style="width:180px">Utilization</th>                      
+
+          <th  style="width:180px">Equipment Used</th>
+          <th  style="width:180px">Utilization</th>
         </thead>
 
 
-        <tbody></tbody>            
-      </table> 
-    </div> <!-- /. col --> 
+        <tbody></tbody>
+      </table>
+    </div> <!-- /. col -->
   </div>
 
-</div> <!-- /.col-->  <!--Customer Field-->           
-<hr style="border: 0.5px solid #f00">  
+</div> <!-- /.col-->  <!--Customer Field-->
+<hr style="border: 0.5px solid #f00">
 <div class="row" style="margin-top:25px">
 
 
 
   <div class="col-sm-1 col-xs-2">
     <h4 class="box-title">
-     <button id="btn_save" data-toggle="modal" data-target="#myModal3"  class="btn text-green" onclick="reset();" 
+     <button id="btn_save" data-toggle="modal" data-target="#myModal3"  class="btn text-green" onclick="reset();"
      style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none ;
-     text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
-   </h4>                            
- </div>    
+     text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>
+   </h4>
+ </div>
 </div><!--/.row-->
 <div class="row" style="margin-top:25px">
   <div class="col-lg-6 col-xs-12">
     <table id="recTable" class="table table-condensed table-bordered table-hover table-striped" >
       <thead>
         <th  style="width:550px">Materials/Equipment/Documents Received</th>
-        <th  style="width:180px">Quantity</th>    
+        <th  style="width:180px">Quantity</th>
 
       </thead>
 
-      <tbody></tbody>            
-    </table> 
-  </div> <!-- /. col --> 
+      <tbody></tbody>
+    </table>
+  </div> <!-- /. col -->
 </div>
-</div> <!-- /.col-->  <!--Customer Field-->           
+</div> <!-- /.col-->  <!--Customer Field-->
 </div>
-<hr style="border: 0.5px solid #f00">  
+<hr style="border: 0.5px solid #f00">
 
 <div class="col-sm-1 col-xs-2">
 
-</div>    
+</div>
 </div><!--/.row-->
 
 <!-- address rows -->
 <div class="row"  style="margin-top:25px" id="pickupDiv">
   <div class="col-md-3 col-xs-12">
-    <label id="pickupErr" ><font color="darkred">*</font>Problems Encountered :</label>     
+    <label id="pickupErr" ><font color="darkred">*</font>Problems Encountered :</label>
     <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
   </div> <!--/. col -->
 
 
   <div class="col-md-3 col-xs-12" id="deliveryDiv">
-    <label id="deliveryErr" ><font color="darkred">*</font>Visitors :</label>     
+    <label id="deliveryErr" ><font color="darkred">*</font>Visitors :</label>
     <textarea id="delivery" rows="2" class="form-control" style="resize:none"></textarea>
   </div> <!--/. -->
 
@@ -399,12 +399,12 @@
     <label id="custnameErr" ><font color="darkred">*</font>Prepared by :</label>
     <div class="input-group" style="margin-top:3px">
      <span class="input-group-addon"><i class="fa fa-user"></i></span>
-     <input type="text"> 
-   </div>   
+     <input type="text">
+   </div>
    <div class="input-group" style="margin-top:3px">
 
 
-   </div>    
+   </div>
 
    <input type='hidden' id="chkCust" value="no-match">
  </div>
@@ -414,11 +414,11 @@
   <div class="input-group" style="margin-top:3px">
     <span class="input-group-addon"><i class="fa fa-user"></i></span>
     <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false">
-  </div>   
+  </div>
   <div class="input-group" style="margin-top:3px">
 
 
-  </div>    
+  </div>
 
   <input type='hidden' id="chkCust" value="no-match">
 </div>
@@ -461,5 +461,3 @@ window.location='../../transaction/steps/main.php
 <?php include("../../../view/master/design_end.html");//?>
 </body>
 </html>
-
-

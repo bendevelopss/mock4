@@ -36,7 +36,7 @@
 
 
 
-    <script src="../../../controller/project.js" type="text/javascript"></script>
+    <script src="../../../controller/project1.js" type="text/javascript"></script>
 
 <?php include("../../../view/master/design_end.html");//?>
 

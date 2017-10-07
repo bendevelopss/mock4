@@ -26,7 +26,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   });// alert("Please Log-in");
       }
       setTimeout('Redirect()', 0);
-      
+
     </script>
     <?php }
     else{
@@ -110,6 +110,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
          <li class="dropdown"">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Utility <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
+            <li><a href="view/others/contract/main.php">Add Contract</a></li>
             <li><a href="view/others/manage/main.php">Manage Account</a></li>
           </ul>
         </li>
@@ -152,7 +153,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   <div class="container">
    <div class="row">
     <div class="col-lg-10s">
-     <h2><?php echo(strtoupper($persan_user_type)); ?> DASHBOARD</h2>   
+     <h2><?php echo(strtoupper($persan_user_type)); ?> DASHBOARD</h2>
    </div>
    <hr>
    <div class="row">
@@ -216,13 +217,13 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
 <div class="content-wrapper">
   <div class="container">
    <div class="row">
-    
-    
+
+
    </div>
-   
+
    <h4 class="page-head-line">TRANSACTION</h4>
 
-   
+
 
 
    <a href="view/transaction/steps/main_contract.php">
@@ -279,7 +280,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   <div class="container">
 
     <h4 class="page-head-line">MAINTENANCE</h4>
-    
+
 
 
     <a href="view/maintenance/equipment/main.php">
@@ -390,13 +391,13 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
 <div class="content-wrapper">
   <div class="container">
    <div class="row">
-    
-    
+
+
    </div>
-   
+
    <h4 class="page-head-line">UTILITIES</h4>
 
-   
+
 
 
    <a href="view/others/manage/main.php">
@@ -423,7 +424,7 @@ if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
 </a>
 </div>
 
-<?php include("view/master/design_end_index.html"); //footer?>  
+<?php include("view/master/design_end_index.html"); //footer?>
 
 </body>
 </html>

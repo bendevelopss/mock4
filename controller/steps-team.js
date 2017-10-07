@@ -49,8 +49,7 @@ function(isConfirm){
 			dataType: 'json',
 			cache: false,
 			success: function(s){
-				//alert("shit");
-debugger;				
+			
 				window.location="../../../view/transaction/PM/main.php";
 //				 window.location="main.php";
 			 }
@@ -84,4 +83,3 @@ function populate_emp(selector){
 			  }
 			});
 		}
-
