@@ -60,6 +60,7 @@
                                         <th>Name</th>
                                         <th>Username</th>
                                         <th>Type</th>
+                                        <th>Contract ID</th>
                                         <th>Status</th>
                                         <th></th>
                                         <th></th>

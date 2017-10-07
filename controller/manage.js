@@ -1,6 +1,7 @@
 	reset();
 	populate_table_main();
 	populate_empID();
+	populate_CID();
 	$('#btn_save').val('create');
 
 
@@ -26,7 +27,7 @@ function populate_table_main(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_main.fnAddData
-	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],s[i][5],
 
 
 	        '<button data-toggle="tooltip" onclick="table_row_view(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
@@ -286,3 +287,30 @@ function populate_empID(catz){
 			  }
 			});
 		}
+
+
+		function populate_CID(catz){
+					//ajax now
+
+					$.ajax ({
+					  type: "POST",
+					  url: "../../../model/contract/populate_table_main.php",
+					  data: "cat="+catz,
+					  dataType: 'json',
+					  cache: false,
+					  success: function(s){
+					  		console.log(s);
+					  		var c = $('#f_CID');
+					        c.empty();
+					        c.html('<option value="none" selected="selected">--Select--</option>');
+					        for(var i = 0; i < s.length; i++) {
+					        let iselected = '';
+					        // if(s[i][0] == selector){ iselected='selected="selected"' }
+					        c.append('<option value='+s[i][0]+' '+iselected+'>'+s[i][1]+'</option>');
+
+					        }
+
+
+					  }
+					});
+				}
