@@ -242,9 +242,9 @@
                 <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>    
                 <div class="input-group" style="margin-top:3px">
 
-                  <input type="radio"> Yes
+                  <input type="radio" name="radiogroup"> Yes
                   <br>
-                  <input type="radio"> No
+                  <input type="radio" name="radiogroup"> No
                 </div>    
               </div> <!-- /.col-->  
 
@@ -274,9 +274,15 @@
               <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
                 <thead>
                   <th style="width:180px">Manpower</th>
-                  <th></th>                         
+                  <th>QTY</th>                         
                 </thead>                            
                 <tbody>
+                  <tr><td>work1</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work2</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work3</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work4</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work5</td><td><input type="number" name=""></td></tr>
+                  <tr><td>work6</td><td><input type="number" name=""></td></tr>
                 </tbody>            
               </table> 
             </div> <!-- /. col --> 

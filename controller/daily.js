@@ -1,4 +1,3 @@
-populate_table_manpower();
 populate_recieve();
 populate_act();
 populate_used();
@@ -21,42 +20,7 @@ var table_Activity = $('#ActTable').dataTable({
 });
 
 
-var table_man = $('#manTable').dataTable({
-	"aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
-	"aaSorting": []
-});
 
-
-function populate_table_manpower(){
-//ajax now
-
-		$.ajax ({
-			type: "POST",
-			url: "../../../model/subcat/populate_cat.php",
-			dataType: 'json',
-			cache: false,
-		success: function(s)
-				{
-
-					table_man.fnClearTable();
-					for(var i = 0; i < s.length; i++)
-						{
-							//if(s[i][2]=='inactive'){enability='disabled'}
-							table_man.fnAddData
-							([s[i][0],s[i][1],
-
-
-				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
-				'<button data-toggle="tooltip" onclick="table_row_del(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete" id="del"> <i class="fa fa-trash"></i>Delete </button>',
-					],false);
-					table_man.fnDraw();
-
-						}
-				}
-				});
-//ajax end
-
-			}
 
 
 
